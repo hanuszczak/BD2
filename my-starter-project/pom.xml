@@ -37,6 +37,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14 -->
+
         </dependencies>
     </dependencyManagement>
 

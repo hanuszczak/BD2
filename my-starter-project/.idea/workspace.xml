@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61a0026f-d481-433e-8e52-c1cdfc083e1a" name="Default Changelist" comment="" />
+    <list default="true" id="61a0026f-d481-433e-8e52-c1cdfc083e1a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/my-starter-project-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/my-starter-project-backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/classes/com/example/test/backend/connection/JDBCConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/classes/com/example/test/backend/connection/JDBCConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/my-starter-project-backend-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/my-starter-project-backend-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/TEST-com.example.test.backend.DataServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/TEST-com.example.test.backend.DataServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/com.example.test.backend.DataServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/com.example.test.backend.DataServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/my-starter-project-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/my-starter-project-ui.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/lib/my-starter-project-backend-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/lib/my-starter-project-backend-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/my-starter-project-ui/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/my-starter-project-backend/target/" />
@@ -14,28 +30,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/CurrentUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-starter-project-ui/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1853">
-              <caret line="109" column="43" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
+            <state relative-caret-position="-487">
+              <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -43,8 +41,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+            <state relative-caret-position="374">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-starter-project-backend/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -61,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/MainLayout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="442">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -112,19 +131,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/my-starter-project-backend/pom.xml" />
+        <option value="$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="690" />
-    <option name="width" value="1237" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="54" />
+    <option name="y" value="-8" />
+    <option name="width" value="1094" />
     <option name="height" value="1087" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -182,6 +208,11 @@
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="connection" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="my-starter-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-starter-project" type="462c0819:PsiDirectoryNode" />
+              <item name="my-starter-project-ui" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -191,11 +222,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547290703397" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547302532101" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ojdbc8.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
@@ -281,11 +312,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="690" y="0" width="1237" height="1087" extended-state="0" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" id="DB Browser" visible="true" weight="0.24723874" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3578709" />
+      <window_info id="DB Browser" weight="0.24723874" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2320838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -295,13 +326,13 @@
       <window_info anchor="bottom" id="DB Execution Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3322851" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6620728" weight="0.32917964" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997923" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.33792722" side_tool="true" visible="true" weight="0.32917964" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -333,9 +364,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/mock/MockDataGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -420,24 +448,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="109" column="43" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/MainLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -469,10 +483,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/MainLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-487">
+          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-backend/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="374">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -533,7 +578,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
