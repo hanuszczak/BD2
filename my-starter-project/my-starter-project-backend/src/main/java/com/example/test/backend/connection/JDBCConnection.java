@@ -3,6 +3,9 @@ package com.example.test.backend.connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 
 public class JDBCConnection {
@@ -21,5 +24,16 @@ public class JDBCConnection {
        {
            System.out.println("Error JDBCConnection constructor: " + e.getMessage());
        }
+    }
+
+    public String getPassQuery(String login) throws SQLException{
+        PreparedStatement stmt = conn.prepareStatement("SELECT PASSWORD FROM USERS WHERE USERNAME = ?");
+        stmt.setString(1, login);
+        ResultSet rset = stmt.executeQuery();
+        rset.next();
+        String password = rset.getString(1);
+        rset.close();
+        stmt.close();
+        return password;
     }
 }

@@ -3,6 +3,8 @@ package com.example.test.authentication;
 
 import com.example.test.backend.connection.JDBCConnection;
 
+import java.sql.SQLException;
+
 /**
  * Default mock implementation of {@link AccessControl}. This implementation
  * accepts any string as a password, and considers the user "admin" as the only
@@ -20,9 +22,18 @@ public class BasicAccessControl implements AccessControl {
     public boolean signIn(String username, String password) {
         if (username == null || username.isEmpty())
             return false;
-
         CurrentUser.set(username);
-        return true;
+        String pass = new String();
+        try {
+            pass = jdbcConnection.getPassQuery(username);
+        }
+        catch (SQLException e) {
+            System.out.println("Error BasicAccessControl (getPassQuery): " + e.getMessage());
+        }
+        if(password.equals(pass)){
+            return true;
+        }
+        return false;
     }
 
     @Override
