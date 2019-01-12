@@ -1,0 +1,17 @@
+com\example\test\authentication\AccessControlFactory.class
+com\example\test\crud\ProductForm$PriceConverter.class
+com\example\test\crud\SampleCrudLogic.class
+com\example\test\Menu.class
+com\example\test\authentication\LoginScreen.class
+com\example\test\BookstoreInitListener.class
+com\example\test\crud\ProductForm.class
+com\example\test\crud\ProductDataProvider.class
+com\example\test\authentication\BasicAccessControl.class
+com\example\test\MainLayout.class
+com\example\test\authentication\AccessControl.class
+com\example\test\crud\ProductGrid.class
+com\example\test\about\AboutView.class
+com\example\test\crud\SampleCrudView.class
+com\example\test\ErrorView.class
+com\example\test\authentication\CurrentUser.class
+com\example\test\crud\ProductForm$StockCountConverter.class
