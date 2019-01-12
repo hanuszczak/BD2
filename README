@@ -1,6 +1,11 @@
 Ściągnąć i uruchomić IntelliJ https://www.jetbrains.com/idea/download/#section=windows - przy pierwszym  uruchomieniu można wybrać  które pluginy zainstalować, na pewno maven jest konieczy, git przydalny,  reszta nie wiem do końca
 Ściągnąć i zainstalować JDK 8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+Ustawić zmienną środowiskową JAVA_HOME na lokalizację JDK (domyślnie instaluje się tutaj: C:\ProgramFiles\Java\jdk1.8.0_111)
+Ściągnąć Maven Apache (http://maven.apache.org/download.cgi) i zainstalować (http://maven.apache.org/install.html)
+Koniecznie dodać zmienne środowiskowe: M2_HOME (lokalizacja folderu ściągniętego w poprzednim punkcie) oraz do PATH dodać ścieżki do JDK i do Mavena/bin (u mnie to jest 
 Ściągnąć projekt z gita i otworzyć go w IntelliJ
-Jeżeli nie ściągnęły się konfiguracje Run dodać dwie: jedną wpisać jako clean install, drugą jako jetty:run
+Jeżeli nie ściągnęły się konfiguracje Run to dodać dwie mavenowe (+ na górze po levej, a później wybrać maven) w jednej jako command line wpisać clean install a katalog wybrać ~\my-starter-project, w drugiej w command line: jetty:run a jako katalog ~\my-starter-project\my-starter-project-ui
 W wierszu poleceń przejść do lokalizacji projektu (folderu my-starter-project) i wpisać mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.3.0 -Dpackaging=jar -Dfile=ojdbc8.jar -DgeneratePom=true
-
+W intellij uruchomić run z clean install, następnie z jetty:run
+Podczas działania jetty:run uruchomić przeglądarkę i wejść pod adres localhost:8080
+Voila! Na stronie jako login wpisać jakiś login z bazy (username z tablicy user) i odpowiadający mu password
