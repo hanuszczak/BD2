@@ -1,0 +1,6 @@
+Ściągnąć i uruchomić IntelliJ https://www.jetbrains.com/idea/download/#section=windows - przy pierwszym  uruchomieniu można wybrać  które pluginy zainstalować, na pewno maven jest konieczy, git przydalny,  reszta nie wiem do końca
+Ściągnąć i zainstalować JDK 8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+Ściągnąć projekt z gita i otworzyć go w IntelliJ
+Jeżeli nie ściągnęły się konfiguracje Run dodać dwie: jedną wpisać jako clean install, drugą jako jetty:run
+W wierszu poleceń przejść do lokalizacji projektu (folderu my-starter-project) i wpisać mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.3.0 -Dpackaging=jar -Dfile=ojdbc8.jar -DgeneratePom=true
+
