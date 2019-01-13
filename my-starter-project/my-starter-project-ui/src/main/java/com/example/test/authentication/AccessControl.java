@@ -1,5 +1,6 @@
 package com.example.test.authentication;
 
+import java.awt.*;
 import java.io.Serializable;
 
 /**
@@ -11,6 +12,8 @@ public interface AccessControl extends Serializable {
     String ADMIN_USERNAME = "admin";
 
     public boolean signIn(String username, String password);
+
+    public boolean signUp(String username, String password, String name, String surname, String email, String phone);
 
     public boolean isUserSignedIn();
 

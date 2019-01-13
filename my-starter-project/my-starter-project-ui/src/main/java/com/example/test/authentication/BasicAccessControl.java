@@ -37,6 +37,18 @@ public class BasicAccessControl implements AccessControl {
     }
 
     @Override
+    public boolean signUp(String username, String password, String name, String surname, String email, String phone){
+        boolean ifSigningUpSucceed = false;
+        try {
+            ifSigningUpSucceed = jdbcConnection.newUserQuery(username, password, name, surname, email, phone);
+        }
+        catch (SQLException e) {
+            System.out.println("Error BasicAccessControl (newUserQuery): " + e.getMessage());
+        }
+        return ifSigningUpSucceed;
+    }
+
+    @Override
     public boolean isUserSignedIn() {
         return !CurrentUser.get().isEmpty();
     }

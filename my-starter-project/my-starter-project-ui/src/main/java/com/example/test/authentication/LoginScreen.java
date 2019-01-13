@@ -29,7 +29,8 @@ public class LoginScreen extends FlexLayout {
     private TextField username;
     private PasswordField password;
     private Button login;
-    private Button forgotPassword;
+
+
     private AccessControl accessControl;
 
     public LoginScreen() {
@@ -66,7 +67,6 @@ public class LoginScreen extends FlexLayout {
 
         loginForm.addFormItem(username = new TextField(), "Username");
         username.setWidth("15em");
-        username.setValue("admin");
         loginForm.add(new Html("<br/>"));
         loginForm.addFormItem(password = new PasswordField(), "Password");
         password.setWidth("15em");
@@ -80,20 +80,21 @@ public class LoginScreen extends FlexLayout {
         loginForm.getElement().addEventListener("keypress", event -> login()).setFilter("event.key == 'Enter'");
         login.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
 
-        buttons.add(forgotPassword = new Button("Forgot password?"));
-        forgotPassword.addClickListener(event -> showNotification(new Notification("Hint: try anything")));
-        forgotPassword.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
+//        buttons.add(signUpButton = new Button("Sign Up!"));
+//        signUpButton.addClickListener(event -> getUI().get().navigate("SignUp"));
+//        signUpButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
 
         return loginForm;
     }
+
 
     private Component buildLoginInformation() {
         VerticalLayout loginInformation = new VerticalLayout();
         loginInformation.setClassName("login-information");
 
-        H1 loginInfoHeader = new H1("Login Information");
+        H1 loginInfoHeader = new H1("Warsaw Rental Agency");
         Span loginInfoText = new Span(
-                "Log in as \"admin\" to have full access. Log in with any other username to have read-only access. For all users, any password is fine.");
+                "Log in to gain opportunity to rent bicycles and other mechanical vehicles");
         loginInformation.add(loginInfoHeader);
         loginInformation.add(loginInfoText);
 
@@ -118,7 +119,7 @@ public class LoginScreen extends FlexLayout {
     private void showNotification(Notification notification) {
         // keep the notification visible a little while after moving the
         // mouse, or until clicked
-        notification.setDuration(2000);
+        notification.setDuration(3000);
         notification.open();
     }
 }

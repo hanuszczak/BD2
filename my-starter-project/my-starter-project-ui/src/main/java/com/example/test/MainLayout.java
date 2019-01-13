@@ -29,6 +29,7 @@ public class MainLayout extends FlexLayout implements RouterLayout {
         menu.addView(AboutView.class, AboutView.VIEW_NAME,
                 VaadinIcon.INFO_CIRCLE.create());
 
+
         add(menu);
     }
 }
