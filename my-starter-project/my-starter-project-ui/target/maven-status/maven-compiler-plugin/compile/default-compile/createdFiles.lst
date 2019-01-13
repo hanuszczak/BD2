@@ -1,4 +1,5 @@
 com\example\test\authentication\AccessControlFactory.class
+com\example\test\authentication\SignUpScreen.class
 com\example\test\crud\ProductForm$PriceConverter.class
 com\example\test\crud\SampleCrudLogic.class
 com\example\test\Menu.class

@@ -2,28 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61a0026f-d481-433e-8e52-c1cdfc083e1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/SignUpScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/classes/com/example/test/backend/connection/JDBCConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/classes/com/example/test/backend/connection/JDBCConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/my-starter-project-backend-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/my-starter-project-backend-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/TEST-com.example.test.backend.DataServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/TEST-com.example.test.backend.DataServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/com.example.test.backend.DataServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/com.example.test.backend.DataServiceTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/MainLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/MainLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/AccessControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/AccessControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/BasicAccessControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/BasicAccessControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/LoginScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/LoginScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/crud/SampleCrudView.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/crud/SampleCrudView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/BasicAccessControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/BasicAccessControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/LoginScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/LoginScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/crud/SampleCrudView.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/crud/SampleCrudView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/lib/my-starter-project-backend-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/lib/my-starter-project-backend-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/MainLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/MainLayout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/AccessControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/AccessControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/MainLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/MainLayout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/AccessControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/AccessControl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/my-starter-project-ui/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-590">
@@ -105,14 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -190,8 +173,8 @@
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java" />
         <option value="$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/MainLayout.java" />
-        <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/SignUpScreen.java" />
+        <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java" />
       </list>
     </option>
   </component>
@@ -433,7 +416,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547421298524" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547422288086" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ojdbc8.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -534,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547312100294</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added SignedUpScreen, working on changing views">
+      <created>1547421507820</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547421507820</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -548,9 +538,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1802646" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1802646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -560,13 +549,13 @@
       <window_info id="DB Browser" order="7" weight="0.24723874" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65798414" visible="true" weight="0.33021808" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65711135" visible="true" weight="0.33021808" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7327293" weight="0.39875388" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49943376" weight="0.32914045" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49943376" weight="0.32914045" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.34201586" side_tool="true" weight="0.32914045" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.34288865" side_tool="true" visible="true" weight="0.33021808" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
@@ -613,7 +602,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JDBC Connection fixed" />
     <MESSAGE value="added getPassQuery" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getPassQuery" />
+    <MESSAGE value="added SignedUpScreen, working on changing views" />
+    <option name="LAST_COMMIT_MESSAGE" value="added SignedUpScreen, working on changing views" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -626,7 +616,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java</url>
-          <line>161</line>
+          <line>106</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -1100,16 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/MainLayout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1121,6 +1101,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-590">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
         </state>
       </provider>
     </entry>
