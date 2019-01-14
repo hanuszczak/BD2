@@ -67,7 +67,7 @@ public class LoginScreen extends FlexLayout {
         centeringLayout.setSizeFull();
         centeringLayout.setJustifyContentMode(JustifyContentMode.CENTER);
         centeringLayout.setAlignItems(Alignment.CENTER);
-        centeringLayout.add(signUpForm);
+        centeringLayout.add(loginForm);
 
         // information text about logging in
         Component loginInformation = buildLoginInformation();
