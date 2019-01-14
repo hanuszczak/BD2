@@ -45,6 +45,7 @@ public class BasicAccessControl implements AccessControl {
         catch (SQLException e) {
             System.out.println("Error BasicAccessControl (newUserQuery): " + e.getMessage());
         }
+        CurrentUser.set(username);
         return ifSigningUpSucceed;
     }
 

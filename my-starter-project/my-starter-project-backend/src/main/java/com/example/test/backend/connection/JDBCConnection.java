@@ -60,15 +60,24 @@ public class JDBCConnection {
         getConnection();
         PreparedStatement stmt = conn.prepareStatement("INSERT INTO USERS " +
                 "(USER_ID, NAME, SURNAME, EMAIL, PHONE, IS_ACTIVE, USERNAME, PASSWORD, USER_TYPE_ID)" +
-                " VALUES (SEQ_USERS_USER_ID.NEXVALUE, ?, ?. ?, ?, 0, ?, ?, 2)");
+                " VALUES (SEQ_USERS_USER_ID.NEXTVAL, ?, ?, ?, ?, 0, ?, ?, 2)");
         stmt.setString(1, name);
         stmt.setString(2, surname);
         stmt.setString(3, email);
-        stmt.setInt(4, Integer.parseInt(phone));
+        stmt.setInt(4, stringPhoneNumberToInt(phone));
         stmt.setString(5, username);
         stmt.setString(6, password);
         stmt.executeUpdate();
         closeConnection();
         return true;
+    }
+
+    public int stringPhoneNumberToInt (String phone) {
+        phone.replace(" ", "");
+        phone.replace("-", "");
+        phone.replace("(","");
+        phone.replace(")","");
+        int number = Integer.parseInt(phone);
+        return number;
     }
 }

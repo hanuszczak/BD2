@@ -17,6 +17,7 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouterLink;
 
 /**
  * UI content when the user is not logged in yet.
@@ -29,12 +30,27 @@ public class LoginScreen extends FlexLayout {
     private TextField username;
     private PasswordField password;
     private Button login;
+    private Button signUpButton;
 
+    private TextField usernameSignUp;
+    private PasswordField passwordSignUp;
+    private PasswordField confirmPassword;
+    private TextField name;
+    private TextField surname;
+    private TextField email;
+    private TextField phone;
+    private Button signUp;
 
+    private FlexLayout centeringLayout;
+    private FormLayout signUpForm;
+    private FormLayout loginForm;
     private AccessControl accessControl;
 
     public LoginScreen() {
         accessControl = AccessControlFactory.getInstance().createAccessControl();
+        centeringLayout = new FlexLayout();
+        buildLoginForm();
+        buildSignUpForm();
         buildUI();
         username.focus();
     }
@@ -44,14 +60,14 @@ public class LoginScreen extends FlexLayout {
         setClassName("login-screen");
 
         // login form, centered in the available part of the screen
-        Component loginForm = buildLoginForm();
+
 
         // layout to center login form when there is sufficient screen space
-        FlexLayout centeringLayout = new FlexLayout();
+
         centeringLayout.setSizeFull();
         centeringLayout.setJustifyContentMode(JustifyContentMode.CENTER);
         centeringLayout.setAlignItems(Alignment.CENTER);
-        centeringLayout.add(loginForm);
+        centeringLayout.add(signUpForm);
 
         // information text about logging in
         Component loginInformation = buildLoginInformation();
@@ -60,8 +76,8 @@ public class LoginScreen extends FlexLayout {
         add(centeringLayout);
     }
 
-    private Component buildLoginForm() {
-        FormLayout loginForm = new FormLayout();
+    private void buildLoginForm() {
+        loginForm = new FormLayout();
 
         loginForm.setWidth("310px");
 
@@ -80,12 +96,50 @@ public class LoginScreen extends FlexLayout {
         loginForm.getElement().addEventListener("keypress", event -> login()).setFilter("event.key == 'Enter'");
         login.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
 
-//        buttons.add(signUpButton = new Button("Sign Up!"));
-//        signUpButton.addClickListener(event -> getUI().get().navigate("SignUp"));
-//        signUpButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
+        buttons.add(signUpButton = new Button("Sign Up!"));
+        signUpButton.addClickListener(event -> {
+            centeringLayout.remove(loginForm);
+            centeringLayout.add(signUpForm);
+        });
+        signUpButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
 
-        return loginForm;
     }
+    private void buildSignUpForm() {
+        signUpForm = new FormLayout();
+
+        signUpForm.setWidth("310px");
+
+        signUpForm.addFormItem(usernameSignUp = new TextField(), "Username");
+        usernameSignUp.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(passwordSignUp = new PasswordField(), "Password");
+        passwordSignUp.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(confirmPassword = new PasswordField(), "Confirm Password");
+        confirmPassword.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(name = new TextField(), "First Name");
+        name.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(surname = new TextField(), "Surname");
+        surname.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(email = new TextField(), "E-mail");
+        email.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(phone = new TextField(), "Phone number");
+
+        HorizontalLayout buttons = new HorizontalLayout();
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.add(buttons);
+
+        buttons.add(signUp = new Button("Sign up"));
+        signUp.addClickListener(event -> signUp());
+        signUpForm.getElement().addEventListener("keypress", event -> signUp()).setFilter("event.key == 'Enter'");
+        signUp.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
+
+    }
+
 
 
     private Component buildLoginInformation() {
@@ -113,6 +167,22 @@ public class LoginScreen extends FlexLayout {
             }
         } finally {
             login.setEnabled(true);
+        }
+    }
+
+    private void signUp() {
+        signUp.setEnabled(false);
+        try {
+            if (accessControl.signUp(usernameSignUp.getValue(), passwordSignUp.getValue(), name.getValue(),
+                    surname.getValue(), email.getValue(), phone.getValue())){
+                getUI().get().navigate("");
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "Please check your data and try again."));
+                usernameSignUp.focus();
+            }
+        } finally {
+            signUp.setEnabled(true);
         }
     }
 

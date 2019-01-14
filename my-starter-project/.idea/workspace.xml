@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61a0026f-d481-433e-8e52-c1cdfc083e1a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/MainLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/MainLayout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/AccessControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/AccessControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/MainLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/MainLayout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/AccessControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/AccessControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/my-starter-project-backend-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/my-starter-project-backend-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/TEST-com.example.test.backend.DataServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/TEST-com.example.test.backend.DataServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/com.example.test.backend.DataServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-backend/target/surefire-reports/com.example.test.backend.DataServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/LoginScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/classes/com/example/test/authentication/LoginScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/LoginScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/classes/com/example/test/authentication/LoginScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/lib/my-starter-project-backend-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/my-starter-project-ui/target/my-starter-project-ui-1.0-SNAPSHOT/WEB-INF/lib/my-starter-project-backend-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/my-starter-project-ui/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,67 +28,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/SynchronizedRequestHandler.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/VaadinServlet.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="17">
               <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/MainLayout.java">
+        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/BookstoreInitListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="170">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/Menu.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/rpc/EventRpcHandler.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-590">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="391">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/crud/SampleCrudView.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/rpc/AbstractRpcInvocationHandler.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1186">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="408">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/ErrorView.java">
+        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/SignUpScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-41">
-              <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
+            <state relative-caret-position="271">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,10 +76,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java">
+        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            <state relative-caret-position="448">
+              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/ServerRpcHandler.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/UidlRequestHandler.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
         </entry>
@@ -103,23 +105,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/VaadinService.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="721" selection-start-line="721" selection-end-line="721" />
-              <folding>
-                <element signature="e#10580#10581#0" expanded="true" />
-                <element signature="e#10631#10632#0" expanded="true" />
-                <element signature="e#41287#41288#0" expanded="true" />
-                <element signature="e#41321#41322#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="321">
+              <caret line="730" selection-start-line="730" selection-end-line="730" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/crud/SampleCrudLogic.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/SynchronizedRequestHandler.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-768">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="306">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -159,6 +155,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -166,20 +167,21 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/my-starter-project-backend/pom.xml" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/crud/SampleCrudView.java" />
-        <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/Menu.java" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/SighInScreen.java" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/AccessControl.java" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/SignInScreen.java" />
-        <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java" />
-        <option value="$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/MainLayout.java" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/SignUpScreen.java" />
+        <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/Menu.java" />
         <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java" />
+        <option value="$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java" />
+        <option value="$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="55" />
+    <option name="x" value="54" />
+    <option name="y" value="-8" />
     <option name="width" value="943" />
     <option name="height" value="1087" />
   </component>
@@ -411,12 +413,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547422288086" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547423683610" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ojdbc8.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -524,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547421507820</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added SignedUpScreen, working on changing views">
+      <created>1547422393973</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547422393973</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -538,6 +547,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1802646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -549,14 +559,14 @@
       <window_info id="DB Browser" order="7" weight="0.24723874" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65711135" visible="true" weight="0.33021808" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7327293" weight="0.39875388" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6515987" visible="true" weight="0.33021808" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7298787" weight="0.40186915" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49943376" weight="0.32914045" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49943376" weight="0.32914045" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.34288865" side_tool="true" visible="true" weight="0.33021808" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.34840134" side_tool="true" visible="true" weight="0.33021808" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49944875" weight="0.32917964" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -568,36 +578,6 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2729332" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="DB Browser" order="7" weight="0.24723874" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65798414" visible="true" weight="0.3312369" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7327293" weight="0.39875388" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49943376" weight="0.32914045" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49943376" weight="0.32914045" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.34201586" side_tool="true" weight="0.32914045" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
-      <window_info anchor="bottom" id="DB Execution Console" order="11" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JDBC Connection fixed" />
@@ -608,19 +588,19 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/BookstoreInitListener.java</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java</url>
-          <line>106</line>
+          <line>160</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java</url>
+          <line>175</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java</url>
           <line>44</line>
           <properties class="com.example.test.backend.connection.JDBCConnection" method="getPassQuery">
@@ -628,7 +608,7 @@
           </properties>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java</url>
           <line>21</line>
           <properties class="com.example.test.authentication.BasicAccessControl" method="signIn">
@@ -636,248 +616,18 @@
           </properties>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java</url>
+          <line>57</line>
+          <properties class="com.example.test.backend.connection.JDBCConnection" method="newUserQuery">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/router/QueryParameters.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#1129#1130#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/external/gwt/gwt-elemental/2.8.2.vaadin2/gwt-elemental-2.8.2.vaadin2.jar!/elemental/json/impl/JreJsonNull.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#855#856#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/internal/JsonCodec.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/page/Page.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-          <folding>
-            <element signature="e#2950#2951#0" expanded="true" />
-            <element signature="e#2985#2986#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/page/History.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/router/internal/ResolveRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#704#705#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/router/Location.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="e#2114#2115#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/startup/RouteTarget.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/router/NavigationState.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/router/NavigationStateBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/startup/RouteRegistry.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="206" selection-start-line="206" selection-end-line="206" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/router/internal/DefaultRouteResolver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/router/Router.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-          <folding>
-            <element signature="e#7490#7491#0" expanded="true" />
-            <element signature="e#7531#7532#0" expanded="true" />
-            <element signature="e#11956#11957#0" expanded="true" />
-            <element signature="e#11992#11993#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/Component.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/internal/StateNode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="595" selection-start-line="595" selection-end-line="595" />
-          <folding>
-            <element signature="e#19671#19672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/dom/Node.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#1322#1323#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1417#1418#0" expanded="true" />
-            <element signature="e#8311#8312#0" expanded="true" />
-            <element signature="e#8383#8384#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/internal/nodefeature/ComponentMapping.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/dom/ElementStateProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/dom/Element.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="589" selection-start-line="589" selection-end-line="589" />
-          <folding>
-            <element signature="e#17440#17441#0" expanded="true" />
-            <element signature="e#17515#17516#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/HasEnabled.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#289#290#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/ComponentEvent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/ComponentEventBus.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/internal/nodefeature/ElementListenerMap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="160" selection-start-line="160" selection-end-line="160" />
-          <folding>
-            <element signature="e#0#12178#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/rpc/EventRpcHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/rpc/AbstractRpcInvocationHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/ServerRpcHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-          <folding>
-            <element signature="e#10171#10172#0" expanded="true" />
-            <element signature="e#10220#10221#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/external/gwt/gwt-elemental/2.8.2.vaadin2/gwt-elemental-2.8.2.vaadin2.jar!/elemental/json/impl/JreJsonValue.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/external/gwt/gwt-elemental/2.8.2.vaadin2/gwt-elemental-2.8.2.vaadin2.jar!/elemental/json/impl/JreJsonObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -922,20 +672,6 @@
             <element signature="e#14731#14732#0" expanded="true" />
             <element signature="e#16798#16799#0" expanded="true" />
             <element signature="e#16851#16852#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/UI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="e#2815#2816#0" expanded="true" />
-            <element signature="e#8837#8838#0" expanded="true" />
-            <element signature="e#8874#8875#0" expanded="true" />
-            <element signature="e#9631#9632#0" expanded="true" />
-            <element signature="e#9695#9696#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1015,27 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/UidlRequestHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/SynchronizedRequestHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/VaadinServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/router/HasUrlParameter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1043,33 +758,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/crud/SampleCrudView.java">
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/about/AboutView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1186">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/VaadinService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="721" selection-start-line="721" selection-end-line="721" />
-          <folding>
-            <element signature="e#10580#10581#0" expanded="true" />
-            <element signature="e#10631#10632#0" expanded="true" />
-            <element signature="e#41287#41288#0" expanded="true" />
-            <element signature="e#41321#41322#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/crud/SampleCrudLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-768">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1080,10 +772,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/crud/SampleCrudLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/oracle/ojdbc14/10.2.0.3.0/ojdbc14-10.2.0.3.0.jar!/oracle/jdbc/driver/OracleDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/oracle/ojdbc14/10.2.0.3.0/ojdbc14-10.2.0.3.0.jar!/oracle/jdbc/driver/PhysicalConnection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="976" selection-start-line="976" selection-end-line="976" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/ojdbc8.jar!/oracle/jdbc/driver/OraclePreparedStatementWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="699" selection-start-line="699" selection-end-line="699" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/oracle/ojdbc14/10.2.0.3.0/ojdbc14-10.2.0.3.0.jar!/oracle/jdbc/driver/OraclePreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="1583" selection-start-line="1583" selection-end-line="1583" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/AccessControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/SignUpScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
-          <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
+        <state relative-caret-position="244">
+          <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1097,17 +841,260 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/Menu.java">
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/crud/SampleCrudView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-590">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="210">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/internal/AbstractFieldSupport.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#2306#2307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/AbstractField.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#2027#2028#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-text-field-flow/1.2.1/vaadin-text-field-flow-1.2.1.jar!/com/vaadin/flow/component/textfield/PasswordField.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
+          <folding>
+            <element signature="e#4749#4750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-text-field-flow/1.2.1/vaadin-text-field-flow-1.2.1.jar!/com/vaadin/flow/component/textfield/TextField.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="164" selection-start-line="164" selection-end-line="164" />
+          <folding>
+            <element signature="e#4647#4648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-backend/src/main/java/com/example/test/backend/connection/JDBCConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/internal/nodefeature/ComponentMapping.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#1479#1480#0" expanded="true" />
+            <element signature="e#1537#1538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/dom/ElementStateProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/internal/StateNode.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="288" selection-start-line="288" selection-end-line="288" />
+          <folding>
+            <element signature="e#3182#3183#0" expanded="true" />
+            <element signature="e#3216#3217#0" expanded="true" />
+            <element signature="e#19671#19672#0" expanded="true" />
+            <element signature="e#19709#19710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/dom/impl/AbstractNodeStateProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/dom/impl/BasicElementStateProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+          <folding>
+            <element signature="e#3164#3165#0" expanded="true" />
+            <element signature="e#3195#3196#0" expanded="true" />
+            <element signature="e#12129#12130#0" expanded="true" />
+            <element signature="e#12160#12161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/dom/Node.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="231" selection-start-line="231" selection-end-line="231" />
+          <folding>
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+            <element signature="e#1417#1418#0" expanded="true" />
+            <element signature="e#8383#8384#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/dom/Element.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
+          <folding>
+            <element signature="e#1828#1829#0" expanded="true" />
+            <element signature="e#1870#1871#0" expanded="true" />
+            <element signature="e#17440#17441#0" expanded="true" />
+            <element signature="e#17515#17516#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/Component.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/UI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="271" selection-start-line="271" selection-end-line="271" />
+          <folding>
+            <element signature="e#2765#2766#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#9695#9696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/HasEnabled.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#289#290#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/component/ComponentEventBus.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/internal/nodefeature/ElementListenerMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
+          <folding>
+            <element signature="e#0#12178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/rpc/EventRpcHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/rpc/AbstractRpcInvocationHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/ServerRpcHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/communication/UidlRequestHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/SynchronizedRequestHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/VaadinService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="730" selection-start-line="730" selection-end-line="730" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/flow-server/1.2.3/flow-server-1.2.3.jar!/com/vaadin/flow/server/VaadinServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/BookstoreInitListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/LoginScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        <state relative-caret-position="271">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-starter-project-ui/src/main/java/com/example/test/authentication/BasicAccessControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
         </state>
       </provider>
     </entry>
