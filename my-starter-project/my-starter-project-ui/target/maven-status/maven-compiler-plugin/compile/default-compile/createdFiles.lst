@@ -1,12 +1,12 @@
 com\example\test\authentication\AccessControlFactory.class
-com\example\test\authentication\SignUpScreen.class
 com\example\test\crud\ProductForm$PriceConverter.class
 com\example\test\crud\SampleCrudLogic.class
 com\example\test\Menu.class
 com\example\test\authentication\LoginScreen.class
-com\example\test\BookstoreInitListener.class
+com\example\test\rental\RentView.class
 com\example\test\crud\ProductForm.class
 com\example\test\crud\ProductDataProvider.class
+com\example\test\InitListener.class
 com\example\test\authentication\BasicAccessControl.class
 com\example\test\MainLayout.class
 com\example\test\authentication\AccessControl.class

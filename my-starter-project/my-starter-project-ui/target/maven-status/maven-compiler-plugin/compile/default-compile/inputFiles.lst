@@ -1,6 +1,5 @@
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\crud\SampleCrudView.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\authentication\AccessControl.java
-C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\BookstoreInitListener.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\crud\ProductGrid.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\authentication\CurrentUser.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\crud\ProductDataProvider.java
@@ -10,7 +9,8 @@ C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\t
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\ErrorView.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\authentication\LoginScreen.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\authentication\AccessControlFactory.java
+C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\InitListener.java
+C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\rental\RentView.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\about\AboutView.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\crud\ProductForm.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\MainLayout.java
-C:\ELKA\BD2\my-starter-project\my-starter-project-ui\src\main\java\com\example\test\authentication\SignUpScreen.java

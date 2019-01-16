@@ -17,7 +17,7 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.RouterLink;
+
 
 /**
  * UI content when the user is not logged in yet.
@@ -58,9 +58,6 @@ public class LoginScreen extends FlexLayout {
     private void buildUI() {
         setSizeFull();
         setClassName("login-screen");
-
-        // login form, centered in the available part of the screen
-
 
         // layout to center login form when there is sufficient screen space
 

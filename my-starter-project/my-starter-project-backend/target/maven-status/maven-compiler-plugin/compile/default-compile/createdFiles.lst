@@ -1,7 +1,11 @@
 com\example\test\backend\mock\MockDataGenerator.class
 com\example\test\backend\data\Product.class
 com\example\test\backend\mock\MockDataService.class
+com\example\test\backend\rentalAgencyData\Vehicle.class
+com\example\test\backend\rentalAgencyData\VehicleType.class
 com\example\test\backend\connection\JDBCConnection.class
+com\example\test\backend\rentalAgencyData\Region.class
 com\example\test\backend\data\Category.class
+com\example\test\backend\rentalAgencyData\Station.class
 com\example\test\backend\data\Availability.class
 com\example\test\backend\DataService.class

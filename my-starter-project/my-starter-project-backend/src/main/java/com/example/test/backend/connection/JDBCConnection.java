@@ -1,11 +1,18 @@
 package com.example.test.backend.connection;
 
+import com.example.test.backend.rentalAgencyData.Region;
+import com.example.test.backend.rentalAgencyData.Station;
+import com.example.test.backend.rentalAgencyData.Vehicle;
+import com.example.test.backend.rentalAgencyData.VehicleType;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 public class JDBCConnection {
@@ -73,11 +80,62 @@ public class JDBCConnection {
     }
 
     public int stringPhoneNumberToInt (String phone) {
-        phone.replace(" ", "");
-        phone.replace("-", "");
-        phone.replace("(","");
-        phone.replace(")","");
+        phone = phone.replace(" ", "");
+        phone = phone.replace("-", "");
+        phone = phone.replace("(","");
+        phone = phone.replace(")","");
         int number = Integer.parseInt(phone);
         return number;
     }
+
+    public boolean rentQuery(String username, Region region, Station station, VehicleType vehicleType, Vehicle vehicle) {
+        getConnection();
+        //TODO
+        closeConnection();
+        return false;
+    }
+
+    public boolean returnQuery(String username, Region region, Station station, VehicleType vehicleType, Vehicle vehicle) {
+        getConnection();
+        //TODO
+        closeConnection();
+        return false;
+    }
+
+    public List<Region> getRegionsQuery() {
+        List<Region> regions = new ArrayList<>();
+        getConnection();
+        //TODO
+        closeConnection();
+
+        return regions;
+    }
+
+    public List<Station> getStationsForRegionQuery(Region region) {
+        List<Station> stations = new ArrayList<>();
+        getConnection();
+        //TODO
+        closeConnection();
+
+        return  stations;
+    }
+
+    public List<VehicleType> getVehicleTypesForStationQuery(Station station) {
+        List<VehicleType> vehicleTypes = new ArrayList<>();
+        getConnection();
+        //TODO
+        closeConnection();
+
+        return vehicleTypes;
+    }
+
+    public List<Vehicle> getVehiclesForStationQuery(Station station, VehicleType vehicleType){
+        List<Vehicle> vehicle = new ArrayList<>();
+        getConnection();
+        //TODO
+        closeConnection();
+
+        return vehicle;
+    }
+
 }

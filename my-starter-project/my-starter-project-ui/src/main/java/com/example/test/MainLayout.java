@@ -1,5 +1,6 @@
 package com.example.test;
 
+import com.example.test.rental.RentView;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
@@ -15,7 +16,6 @@ import com.example.test.crud.SampleCrudView;
  */
 @HtmlImport("css/shared-styles.html")
 @Theme(value = Lumo.class)
-@PWA(name = "Bookstore Starter", shortName = "Bookstore")
 public class MainLayout extends FlexLayout implements RouterLayout {
     private Menu menu;
 
@@ -24,11 +24,13 @@ public class MainLayout extends FlexLayout implements RouterLayout {
         setClassName("main-layout");
 
         menu = new Menu();
-        menu.addView(SampleCrudView.class, SampleCrudView.VIEW_NAME,
-                VaadinIcon.EDIT.create());
-        menu.addView(AboutView.class, AboutView.VIEW_NAME,
-                VaadinIcon.INFO_CIRCLE.create());
-
+        menu.addView(RentView.class,  RentView.VIEW_NAME,
+                VaadinIcon.STEP_FORWARD.create());
+//        menu.addView(SampleCrudView.class, SampleCrudView.VIEW_NAME,
+//                VaadinIcon.EDIT.create());
+//        menu.addView(AboutView.class, AboutView.VIEW_NAME,
+//                VaadinIcon.INFO_CIRCLE.create());
+//
 
         add(menu);
     }
