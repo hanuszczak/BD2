@@ -95,7 +95,7 @@ public class JDBCConnection {
         return false;
     }
 
-    public boolean returnQuery(String username, Region region, Station station, VehicleType vehicleType, Vehicle vehicle) {
+    public boolean returnQuery(String username, Vehicle vehicle, Region region, Station station) {
         getConnection();
         //TODO
         closeConnection();
@@ -130,12 +130,20 @@ public class JDBCConnection {
     }
 
     public List<Vehicle> getVehiclesForStationQuery(Station station, VehicleType vehicleType){
-        List<Vehicle> vehicle = new ArrayList<>();
+        List<Vehicle> vehicles = new ArrayList<>();
         getConnection();
         //TODO
         closeConnection();
 
-        return vehicle;
+        return vehicles;
+    }
+
+    public List<Vehicle> getRentedVehiclesQuery(String username) {
+        List<Vehicle> vehicles = new ArrayList<>();
+        getConnection();
+        //TODO
+        closeConnection();
+        return vehicles;
     }
 
 }

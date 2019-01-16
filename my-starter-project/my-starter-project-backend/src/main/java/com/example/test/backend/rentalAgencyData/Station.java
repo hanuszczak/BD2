@@ -6,15 +6,15 @@ import java.io.Serializable;
 public class Station implements Serializable {
 
     @NotNull
-    private int id;
+    private int id = -1;
     @NotNull
-    private String address;
+    private String address = "address";
     @NotNull
-    private int freeVehicles;
+    private int freeVehicles = 0;
     @NotNull
-    private int limit;
+    private int limit = 0;
     @NotNull
-    private int regionId;
+    private int regionId = -1;
 
 
     public int getId() {

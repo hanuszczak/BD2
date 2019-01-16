@@ -37,10 +37,10 @@ public class RentalControl {
         return ifRentSuccessful;
     }
 
-    public boolean returnVehicle(String username, Region region, Station station, VehicleType vehicleType, Vehicle vehicle) {
+    public boolean returnVehicle(String username, Vehicle vehicle,  Region region, Station station) {
         boolean ifReturnSuccessful = false;
 //        try {
-        ifReturnSuccessful = jdbcConnection.returnQuery(username, region, station, vehicleType, vehicle);
+        ifReturnSuccessful = jdbcConnection.returnQuery(username, vehicle, region, station);
 //        }
 //        catch (SQLException e) {
 //            System.out.println("Error BasicAccessControl (getPassQuery): " + e.getMessage());
@@ -74,6 +74,11 @@ public class RentalControl {
 
     public void getVehiclesFromDatabaseForStation(Station station, VehicleType vehicleType){
         vehicles = jdbcConnection.getVehiclesForStationQuery(station, vehicleType);
+    }
+
+
+    public void getRentedVehiclesFromDatabaseForUser(String currentUser) {
+        vehicles = jdbcConnection.getRentedVehiclesQuery(currentUser);
     }
 
     public List<Vehicle> getVehicles() {

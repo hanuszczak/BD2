@@ -2,7 +2,6 @@ package com.example.test.rental;
 
 import com.example.test.MainLayout;
 import com.example.test.authentication.CurrentUser;
-import com.example.test.backend.connection.JDBCConnection;
 import com.example.test.backend.connection.RentalControl;
 import com.example.test.backend.rentalAgencyData.Region;
 import com.example.test.backend.rentalAgencyData.Station;
@@ -163,7 +162,7 @@ public class RentView extends FlexLayout {
                 getUI().get().navigate("");
             } else {
                 showNotification(new Notification("Renting a vehicle failed. " +
-                        "Please check your username and password and try again."));
+                        "Please try again"));
                 regionBox.focus();
             }
         } finally {

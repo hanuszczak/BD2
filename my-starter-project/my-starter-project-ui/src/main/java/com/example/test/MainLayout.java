@@ -1,6 +1,7 @@
 package com.example.test;
 
 import com.example.test.rental.RentView;
+import com.example.test.rental.ReturnView;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
@@ -26,6 +27,8 @@ public class MainLayout extends FlexLayout implements RouterLayout {
         menu = new Menu();
         menu.addView(RentView.class,  RentView.VIEW_NAME,
                 VaadinIcon.STEP_FORWARD.create());
+        menu.addView(ReturnView.class, ReturnView.VIEW_NAME,
+                VaadinIcon.STEP_BACKWARD.create());
 //        menu.addView(SampleCrudView.class, SampleCrudView.VIEW_NAME,
 //                VaadinIcon.EDIT.create());
 //        menu.addView(AboutView.class, AboutView.VIEW_NAME,

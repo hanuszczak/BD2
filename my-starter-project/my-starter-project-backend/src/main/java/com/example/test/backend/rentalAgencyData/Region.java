@@ -6,9 +6,9 @@ import java.io.Serializable;
 public class Region implements Serializable {
 
     @NotNull
-    private int id;
+    private int id = -1;
     @NotNull
-    private String name;
+    private String name = "Region";
 
     public int getId() {
         return id;
@@ -26,8 +26,4 @@ public class Region implements Serializable {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return getName();
-    }
 }

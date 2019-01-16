@@ -11,6 +11,7 @@ com\example\test\authentication\BasicAccessControl.class
 com\example\test\MainLayout.class
 com\example\test\authentication\AccessControl.class
 com\example\test\crud\ProductGrid.class
+com\example\test\rental\ReturnView.class
 com\example\test\about\AboutView.class
 com\example\test\crud\SampleCrudView.class
 com\example\test\ErrorView.class

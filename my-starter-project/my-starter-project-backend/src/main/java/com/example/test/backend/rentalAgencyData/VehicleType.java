@@ -6,13 +6,13 @@ import java.io.Serializable;
 public class VehicleType implements Serializable {
 
     @NotNull
-    private int id;
+    private int id = -1;
     @NotNull
-    private int cost;
+    private int cost = 0;
     @NotNull
-    private int min_balance;
+    private int min_balance = 0;
     @NotNull
-    private String type;
+    private String type = "type";
 
     public int getId() {
         return id;
@@ -46,8 +46,4 @@ public class VehicleType implements Serializable {
         this.type = name;
     }
 
-//    @Override
-//    public String toString() {
-//        return getType();
-//    }
 }

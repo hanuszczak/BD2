@@ -6,13 +6,13 @@ import java.io.Serializable;
 public class Vehicle implements Serializable {
 
     @NotNull
-    private int id;
+    private int id = -1;
     @NotNull
-    private boolean isFree;
+    private boolean isFree = false;
     @NotNull
-    private int stationId;
+    private int stationId = -1;
     @NotNull
-    private int typeId;
+    private int typeId = -1;
 
     public int getId() {
         return id;
