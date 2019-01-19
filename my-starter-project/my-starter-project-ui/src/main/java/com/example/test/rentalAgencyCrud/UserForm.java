@@ -14,6 +14,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.converter.StringToIntegerConverter;
+import com.vaadin.flow.data.converter.StringToLongConverter;
 import com.vaadin.flow.data.value.ValueChangeMode;
 
 import java.text.DecimalFormat;
@@ -67,10 +68,10 @@ public class UserForm extends Div {
         }
     }
 
-    private static class PhoneConverter extends StringToIntegerConverter {
+    private static class PhoneConverter extends StringToLongConverter {
 
         public PhoneConverter() {
-            super(0, "Could not convert value to " + Integer.class.getName()
+            super(0l, "Could not convert value to " + Long.class.getName()
                     + ".");
         }
 
@@ -83,7 +84,7 @@ public class UserForm extends Div {
             DecimalFormat format = new DecimalFormat();
             format.setMaximumFractionDigits(0);
             format.setDecimalSeparatorAlwaysShown(false);
-            format.setParseIntegerOnly(true);
+            //format.setParseIntegerOnly(true);
             return format;
         }
     }

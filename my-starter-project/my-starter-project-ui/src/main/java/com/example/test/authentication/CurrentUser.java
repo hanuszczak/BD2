@@ -42,7 +42,11 @@ public final class CurrentUser {
 
     public static String getRole() {
         String role = (String) getCurrentRequest().getWrappedSession().getAttribute(ROLE);
-        return role;
+        if (role == null) {
+            return "";
+        } else {
+            return role;
+        }
     }
 
     /**

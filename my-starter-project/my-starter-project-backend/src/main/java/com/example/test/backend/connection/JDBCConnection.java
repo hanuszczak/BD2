@@ -2,12 +2,7 @@ package com.example.test.backend.connection;
 
 import com.example.test.backend.rentalAgencyData.*;
 
-import javax.jws.soap.SOAPBinding;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -159,9 +154,58 @@ public class JDBCConnection {
     public List<User> getAllUsersQuery() {
         List<User> users = new ArrayList<>();
         getConnection();
-        //TODO
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("SELECT USER_ID, NAME, SURNAME, EMAIL, PHONE, " +
+                    "IS_ACTIVE, USERNAME, USER_TYPE_ID FROM USERS");
+            int i = 0;
+            while (rset.next()) {
+                User user = new User();
+                user.setId(rset.getInt(1));
+                user.setName(rset.getString(2));
+                user.setSurname(rset.getString(3));
+                user.setEmail(rset.getString(4));
+                user.setPhone(rset.getLong(5));
+                user.setIsActive(getActivityFromQuery(rset.getInt(6)));
+                user.setUsername(rset.getString(7));
+                user.setUserType(getUserTypeFromQuery(rset.getInt(8)));
+                users.add(user);
+            }
+            System.out.println("Wykonało się " + i + " pętli");
+            rset.close();
+            stmt.close();
+        }
+        catch (SQLException e){
+            System.out.println("Error JDBCConnection getAllUsersQuery: " + e.getMessage());
+        }
         closeConnection();
         return users;
     }
 
+
+    private UserType getUserTypeFromQuery(int i) {
+        UserType userType;
+        switch (i) {
+            case 1:
+                userType = UserType.ADMIN;
+                break;
+            case 3:
+                userType = UserType.WORKER;
+                break;
+            default:
+                userType = UserType.USER;
+        }
+        return userType;
+    }
+
+    private Activity getActivityFromQuery(int i) {
+        Activity activity;
+        if(i == 0) {
+            activity = Activity.BLOCKED;
+        }
+        else {
+            activity = Activity.ACTIVE;
+        }
+        return activity;
+    }
 }

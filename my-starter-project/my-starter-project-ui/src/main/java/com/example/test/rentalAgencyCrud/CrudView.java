@@ -42,7 +42,7 @@ public class CrudView extends HorizontalLayout
                 event -> viewLogic.rowSelected(event.getValue()));
 
         form = new UserForm(viewLogic);
-     
+
         VerticalLayout barAndGridLayout = new VerticalLayout();
         barAndGridLayout.add(topLayout);
         barAndGridLayout.add(grid);
@@ -113,7 +113,7 @@ public class CrudView extends HorizontalLayout
          * issue is resolved. The category CheckboxGroup throws an
          * IllegalArgumentException when the form is disabled.
          */
-        //form.setEnabled(show);
+        form.setEnabled(show);
     }
 
     @Override

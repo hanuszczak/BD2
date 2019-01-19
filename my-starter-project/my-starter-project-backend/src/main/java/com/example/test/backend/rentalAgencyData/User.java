@@ -16,7 +16,7 @@ public class User implements Serializable {
     @NotNull
     private String email = "";
     @NotNull
-    private int phone = -1;
+    private long phone = -1;
     @NotNull
     private Activity isActive = Activity.ACTIVE;
     @NotNull
@@ -62,11 +62,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public int getPhone() {
+    public long getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 

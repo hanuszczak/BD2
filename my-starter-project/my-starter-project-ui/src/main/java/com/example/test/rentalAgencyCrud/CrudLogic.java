@@ -54,7 +54,7 @@ public class CrudLogic implements Serializable {
                 }
             }
         } else {
-            view.showForm(false);
+            //view.showForm(false);
         }
     }
 
