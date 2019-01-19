@@ -1,10 +1,8 @@
 package com.example.test.backend.connection;
 
-import com.example.test.backend.rentalAgencyData.Region;
-import com.example.test.backend.rentalAgencyData.Station;
-import com.example.test.backend.rentalAgencyData.Vehicle;
-import com.example.test.backend.rentalAgencyData.VehicleType;
+import com.example.test.backend.rentalAgencyData.*;
 
+import javax.jws.soap.SOAPBinding;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -49,17 +47,29 @@ public class JDBCConnection {
         }
     }
 
-    public String getPassQuery(String login) throws SQLException{
+    public String[] getPassAndRoleQuery(String login) throws SQLException{
+        String[] data = new String[2];
         getConnection();
-        PreparedStatement stmt = conn.prepareStatement("SELECT PASSWORD FROM USERS WHERE USERNAME = ?");
+        PreparedStatement stmt = conn.prepareStatement("SELECT PASSWORD, USER_TYPE_ID FROM USERS WHERE USERNAME = ?");
         stmt.setString(1, login);
         ResultSet rset = stmt.executeQuery();
         rset.next();
-        String password = rset.getString(1);
+        data[0] = rset.getString(1);
+        int userType = rset.getInt(2);
+        switch (userType) {
+            case 1:
+                data[1] = "admin";
+                break;
+            case 3:
+                data[1] = "worker";
+                break;
+            default:
+                data[1] = "user";
+        }
         rset.close();
         stmt.close();
         closeConnection();
-        return password;
+        return data;
     }
 
     public boolean newUserQuery(String username, String password, String name, String surname, String email, String phone)
@@ -67,7 +77,7 @@ public class JDBCConnection {
         getConnection();
         PreparedStatement stmt = conn.prepareStatement("INSERT INTO USERS " +
                 "(USER_ID, NAME, SURNAME, EMAIL, PHONE, IS_ACTIVE, USERNAME, PASSWORD, USER_TYPE_ID)" +
-                " VALUES (SEQ_USERS_USER_ID.NEXTVAL, ?, ?, ?, ?, 0, ?, ?, 2)");
+                " VALUES (SEQ_USERS_USER_ID.NEXTVAL, ?, ?, ?, ?, 1, ?, ?, 2)");
         stmt.setString(1, name);
         stmt.setString(2, surname);
         stmt.setString(3, email);
@@ -144,6 +154,14 @@ public class JDBCConnection {
         //TODO
         closeConnection();
         return vehicles;
+    }
+
+    public List<User> getAllUsersQuery() {
+        List<User> users = new ArrayList<>();
+        getConnection();
+        //TODO
+        closeConnection();
+        return users;
     }
 
 }

@@ -22,12 +22,12 @@ import com.example.test.backend.data.Product;
  * See also {@link SampleCrudLogic} for fetching the data, the actual CRUD
  * operations and controlling the view based on events from outside.
  */
-@Route(value = "User", layout = MainLayout.class)
+@Route(value = "Crud", layout = MainLayout.class)
 //@RouteAlias(value = "", layout = MainLayout.class)
 public class SampleCrudView extends HorizontalLayout
         implements HasUrlParameter<String> {
 
-    public static final String VIEW_NAME = "User";
+    public static final String VIEW_NAME = "Crud";
     private ProductGrid grid;
     private ProductForm form;
     private TextField filter;

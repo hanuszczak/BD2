@@ -22,15 +22,15 @@ public class BasicAccessControl implements AccessControl {
     public boolean signIn(String username, String password) {
         if (username == null || username.isEmpty())
             return false;
-        CurrentUser.set(username);
-        String pass = new String();
+        String[] data = new String[2];  // data[0] - pass, data[1] - role
         try {
-            pass = jdbcConnection.getPassQuery(username);
+            data = jdbcConnection.getPassAndRoleQuery(username);
         }
         catch (SQLException e) {
             System.out.println("Error BasicAccessControl (getPassQuery): " + e.getMessage());
         }
-        if(password.equals(pass)){
+        CurrentUser.set(username, data[1]);
+        if(password.equals(data[0])){
             return true;
         }
         return false;
@@ -45,7 +45,7 @@ public class BasicAccessControl implements AccessControl {
         catch (SQLException e) {
             System.out.println("Error BasicAccessControl (newUserQuery): " + e.getMessage());
         }
-        CurrentUser.set(username);
+        CurrentUser.set(username, "user");
         return ifSigningUpSucceed;
     }
 
@@ -55,14 +55,14 @@ public class BasicAccessControl implements AccessControl {
     }
 
     @Override
-    public boolean isUserInRole(String role) {
-        if ("admin".equals(role)) {
-            // Only the "admin" user is in the "admin" role
-            return getPrincipalName().equals("admin");
-        }
+    public boolean isUserInRoleOfAdmin() {
+            return CurrentUser.getRole().equals("admin");
 
-        // All users are in all non-admin roles
-        return true;
+    }
+    @Override
+    public boolean isUserInRoleOfWorker() {
+        return CurrentUser.getRole().equals("worker");
+
     }
 
     @Override

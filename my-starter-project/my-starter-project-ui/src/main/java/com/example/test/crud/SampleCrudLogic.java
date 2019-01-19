@@ -29,7 +29,7 @@ public class SampleCrudLogic implements Serializable {
         editProduct(null);
         // Hide and disable if not admin
         if (!AccessControlFactory.getInstance().createAccessControl()
-                .isUserInRole(AccessControl.ADMIN_ROLE_NAME)) {
+                .isUserInRoleOfAdmin()) {
             view.setNewProductEnabled(false);
         }
     }
@@ -109,7 +109,7 @@ public class SampleCrudLogic implements Serializable {
 
     public void rowSelected(Product product) {
         if (AccessControlFactory.getInstance().createAccessControl()
-                .isUserInRole(AccessControl.ADMIN_ROLE_NAME)) {
+                .isUserInRoleOfAdmin()) {
             editProduct(product);
         }
     }
