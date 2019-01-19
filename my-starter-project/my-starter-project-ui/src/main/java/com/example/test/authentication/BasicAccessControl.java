@@ -32,7 +32,6 @@ public class BasicAccessControl implements AccessControl {
             System.out.println("Error BasicAccessControl (getPassQuery): " + e.getMessage());
         }
         CurrentUser.set(username, data[1]);
-        System.out.println(data[0]);
         if(haspassword.equals(data[0])){
             return true;
         }

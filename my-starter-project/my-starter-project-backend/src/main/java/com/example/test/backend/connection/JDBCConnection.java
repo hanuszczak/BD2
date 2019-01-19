@@ -75,7 +75,6 @@ public class JDBCConnection {
         ResultSet rset = stmt.executeQuery();
         rset.next();
         String hashpassword = rset.getString(1);
-        System.out.println(hashpassword);
         rset.close();
         stmt.close();
         closeConnection();
