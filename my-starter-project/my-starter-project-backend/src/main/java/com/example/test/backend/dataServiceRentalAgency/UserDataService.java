@@ -43,6 +43,7 @@ public class UserDataService extends MyDataService {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getId() == u.getId()) {
                 users.set(i, u);
+
                 return;
             }
         }

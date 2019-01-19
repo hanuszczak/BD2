@@ -27,17 +27,17 @@ public class MainLayout extends FlexLayout implements RouterLayout {
         setClassName("main-layout");
 
         menu = new Menu();
-        menu.addView(RentView.class,  RentView.VIEW_NAME,
-                VaadinIcon.STEP_FORWARD.create());
-        menu.addView(ReturnView.class, ReturnView.VIEW_NAME,
-                VaadinIcon.STEP_BACKWARD.create());
-
-        if(CurrentUser.getRole().equals("admin") || CurrentUser.getRole().equals("worker")) {
+        if(CurrentUser.getRole().equals("user")) {
+            menu.addView(RentView.class, RentView.VIEW_NAME,
+                    VaadinIcon.STEP_FORWARD.create());
+            menu.addView(ReturnView.class, ReturnView.VIEW_NAME,
+                    VaadinIcon.STEP_BACKWARD.create());
+        }
+        else {
             menu.addView(CrudView.class, CrudView.VIEW_NAME,
                     VaadinIcon.USERS.create());
-//        menu.addView(AboutView.class, AboutView.VIEW_NAME,
-//                VaadinIcon.INFO_CIRCLE.create());
-//
+            menu.addView(SampleCrudView.class, SampleCrudView.VIEW_NAME,
+                    VaadinIcon.ABACUS.create());
         }
         add(menu);
     }

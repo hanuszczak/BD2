@@ -1,11 +1,11 @@
 package com.example.test.authentication;
 
+import com.example.test.backend.rentalAgencyData.UserType;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Span;
@@ -156,7 +156,13 @@ public class LoginScreen extends FlexLayout {
         login.setEnabled(false);
         try {
             if (accessControl.signIn(username.getValue(), password.getValue())) {
-                getUI().get().navigate("");
+                String role = CurrentUser.getRole();
+                if(role.equals(UserType.ADMIN.toString())||role.equals(UserType.WORKER.toString())){
+                    getUI().get().navigate("Users");
+                }
+                else {
+                    getUI().get().navigate("");
+                }
             } else {
                 showNotification(new Notification("Login failed. " +
                         "Please check your username and password and try again."));

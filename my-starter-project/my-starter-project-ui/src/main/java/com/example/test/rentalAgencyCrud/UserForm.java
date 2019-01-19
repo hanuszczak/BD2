@@ -46,19 +46,15 @@ public class UserForm extends Div {
     private User currentUser;
 
 
-    private static class StockCountConverter extends StringToIntegerConverter {
+    private static class IdConverter extends StringToIntegerConverter {
 
-        public StockCountConverter() {
+        public IdConverter() {
             super(0, "Could not convert value to " + Integer.class.getName()
                     + ".");
         }
 
         @Override
         protected NumberFormat getFormat(Locale locale) {
-            // Do not use a thousands separator, as HTML5 input type
-            // number expects a fixed wire/DOM number format regardless
-            // of how the browser presents it to the user (which could
-            // depend on the browser locale).
             DecimalFormat format = new DecimalFormat();
             format.setMaximumFractionDigits(0);
             format.setDecimalSeparatorAlwaysShown(false);
@@ -77,14 +73,10 @@ public class UserForm extends Div {
 
         @Override
         protected NumberFormat getFormat(Locale locale) {
-            // Do not use a thousands separator, as HTML5 input type
-            // number expects a fixed wire/DOM number format regardless
-            // of how the browser presents it to the user (which could
-            // depend on the browser locale).
             DecimalFormat format = new DecimalFormat();
             format.setMaximumFractionDigits(0);
             format.setDecimalSeparatorAlwaysShown(false);
-            //format.setParseIntegerOnly(true);
+            format.setGroupingUsed(false);
             return format;
         }
     }
@@ -119,8 +111,8 @@ public class UserForm extends Div {
         HorizontalLayout horizontalLayout1 = new HorizontalLayout(userIdField,
                 usernameField, userTypeBox);
         horizontalLayout1.setWidth("100%");
-        horizontalLayout1.setFlexGrow(2, userIdField);
-        horizontalLayout1.setFlexGrow(3, usernameField);
+        horizontalLayout1.setFlexGrow(1, userIdField);
+        horizontalLayout1.setFlexGrow(2, usernameField);
         horizontalLayout1.setFlexGrow(1, userTypeBox);
         content.add(horizontalLayout1);
 
@@ -128,7 +120,7 @@ public class UserForm extends Div {
         nameField.setRequired(true);
         nameField.setValueChangeMode(ValueChangeMode.EAGER);
 
-        surnameField = new TextField("Name");
+        surnameField = new TextField("Surname");
         surnameField.setRequired(true);
         surnameField.setValueChangeMode(ValueChangeMode.EAGER);
 
@@ -139,7 +131,7 @@ public class UserForm extends Div {
         horizontalLayout2.setFlexGrow(1, nameField, surnameField);
         content.add(horizontalLayout2);
 
-        emailField = new TextField("Name");
+        emailField = new TextField("Email");
         emailField.setWidth("100%");
         emailField.setRequired(true);
         emailField.setValueChangeMode(ValueChangeMode.EAGER);
@@ -148,13 +140,13 @@ public class UserForm extends Div {
             emailField.setEnabled(false);
         }
 
-        phoneField = new TextField("Name");
+        phoneField = new TextField("Phone");
         phoneField.setWidth("100%");
         phoneField.setRequired(true);
         phoneField.setValueChangeMode(ValueChangeMode.EAGER);
         content.add(phoneField);
 
-        activityBox = new ComboBox<>("activityBox");
+        activityBox = new ComboBox<>("User status");
         activityBox.setWidth("100%");
         activityBox.setRequired(true);
         activityBox.setItems(Activity.values());
@@ -162,8 +154,14 @@ public class UserForm extends Div {
         content.add(activityBox);
 
         binder = new BeanValidationBinder<>(User.class);
-        binder.forField(phoneField).withConverter(new PhoneConverter())
-                .bind("phone");
+        binder.forField(phoneField).withConverter(new PhoneConverter()).bind("phone");
+        binder.forField(nameField).bind("name");
+        binder.forField(surnameField).bind("surname");
+        binder.forField(usernameField).bind("username");
+        binder.forField(emailField).bind("email");
+        binder.forField(userIdField).withConverter(new IdConverter()).bind("id");
+        binder.forField(activityBox).bind("isActive");
+        binder.forField(userTypeBox).bind("userType");
         binder.bindInstanceFields(this);
 
         // enable/disable save button while editing
@@ -210,7 +208,6 @@ public class UserForm extends Div {
 
         content.add(save, discard, delete, cancel);
     }
-
 
     public void editUser(User user) {
         if (user == null) {

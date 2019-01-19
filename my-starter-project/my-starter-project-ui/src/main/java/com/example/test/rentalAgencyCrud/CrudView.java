@@ -18,7 +18,7 @@ import com.vaadin.flow.router.Route;
  * See also {@link SampleCrudLogic} for fetching the data, the actual CRUD
  * operations and controlling the view based on events from outside.
  */
-@Route(value = "User", layout = MainLayout.class)
+@Route(value = "Users", layout = MainLayout.class)
 //@RouteAlias(value = "", layout = MainLayout.class)
 public class CrudView extends HorizontalLayout
         implements HasUrlParameter<String> {
@@ -103,7 +103,7 @@ public class CrudView extends HorizontalLayout
 
     public void editUser(User user) {
         showForm(user != null);
-        //form.editUser(user);
+        form.editUser(user);
     }
 
     public void showForm(boolean show) {
@@ -113,7 +113,7 @@ public class CrudView extends HorizontalLayout
          * issue is resolved. The category CheckboxGroup throws an
          * IllegalArgumentException when the form is disabled.
          */
-        form.setEnabled(show);
+        //form.setEnabled(show);
     }
 
     @Override
