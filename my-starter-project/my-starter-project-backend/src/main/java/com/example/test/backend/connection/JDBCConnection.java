@@ -166,6 +166,36 @@ public class JDBCConnection {
         return vehicles;
     }
 
+    public void updateUserQuery(int id, User user) {
+        getConnection();
+        //TODO
+        //update all attributes, just for sure
+        closeConnection();
+    }
+
+    public void deleteUserQuery(User user){
+        getConnection();
+        try {
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM VERIFICATIONCODES WHERE USER_ID = ?");
+            stmt.setInt(1, user.getId());
+            stmt.executeUpdate();
+            stmt.close();
+        }
+        catch (SQLException e) {
+            System.out.println("Error JDBCConnection deleteUserQuery(delete users):" + e.getMessage());
+        }
+        try {
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM USERS WHERE USER_ID = ?");
+            stmt.setInt(1, user.getId());
+            stmt.executeUpdate();
+            stmt.close();
+        }
+        catch (SQLException e) {
+            System.out.println("Error JDBCConnection deleteUserQuery(delete users):" + e.getMessage());
+        }
+        closeConnection();
+    }
+
     public List<User> getAllUsersQuery() {
         List<User> users = new ArrayList<>();
         getConnection();
@@ -173,7 +203,6 @@ public class JDBCConnection {
             Statement stmt = conn.createStatement();
             ResultSet rset = stmt.executeQuery("SELECT USER_ID, NAME, SURNAME, EMAIL, PHONE, " +
                     "IS_ACTIVE, USERNAME, USER_TYPE_ID FROM USERS");
-            int i = 0;
             while (rset.next()) {
                 User user = new User();
                 user.setId(rset.getInt(1));
@@ -186,7 +215,6 @@ public class JDBCConnection {
                 user.setUserType(getUserTypeFromQuery(rset.getInt(8)));
                 users.add(user);
             }
-            System.out.println("Wykonało się " + i + " pętli");
             rset.close();
             stmt.close();
         }

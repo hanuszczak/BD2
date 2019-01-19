@@ -42,8 +42,9 @@ public class UserDataService extends MyDataService {
     public synchronized void updateUser(User u) {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getId() == u.getId()) {
+                int id = users.get(i).getId();
                 users.set(i, u);
-
+                jdbcConnection.updateUserQuery(id, u);
                 return;
             }
         }
@@ -67,6 +68,7 @@ public class UserDataService extends MyDataService {
             throw new IllegalArgumentException("User with id " + userId
                     + " not found");
         }
+        jdbcConnection.deleteUserQuery(u);
         users.remove(u);
     }
 

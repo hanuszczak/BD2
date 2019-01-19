@@ -28,7 +28,6 @@ public class UserForm extends Div {
 
     private VerticalLayout content;
 
-    private TextField userIdField;
     private TextField usernameField;
     private ComboBox<UserType> userTypeBox;
     private TextField nameField;
@@ -90,9 +89,6 @@ public class UserForm extends Div {
 
         viewLogic = crudLogic;
 
-        userIdField = new TextField("ID");
-        userIdField.setRequired(true);
-        userIdField.setValueChangeMode(ValueChangeMode.EAGER);
 
         usernameField = new TextField("Username");
         usernameField.setRequired(true);
@@ -108,10 +104,9 @@ public class UserForm extends Div {
             userTypeBox.setEnabled(false);
         }
 
-        HorizontalLayout horizontalLayout1 = new HorizontalLayout(userIdField,
+        HorizontalLayout horizontalLayout1 = new HorizontalLayout(
                 usernameField, userTypeBox);
         horizontalLayout1.setWidth("100%");
-        horizontalLayout1.setFlexGrow(1, userIdField);
         horizontalLayout1.setFlexGrow(2, usernameField);
         horizontalLayout1.setFlexGrow(1, userTypeBox);
         content.add(horizontalLayout1);
@@ -159,7 +154,6 @@ public class UserForm extends Div {
         binder.forField(surnameField).bind("surname");
         binder.forField(usernameField).bind("username");
         binder.forField(emailField).bind("email");
-        binder.forField(userIdField).withConverter(new IdConverter()).bind("id");
         binder.forField(activityBox).bind("isActive");
         binder.forField(userTypeBox).bind("userType");
         binder.bindInstanceFields(this);
@@ -213,6 +207,7 @@ public class UserForm extends Div {
         if (user == null) {
             user = new User();
         }
+        delete.setEnabled(isAdmin());
         currentUser = user;
         binder.readBean(user);
     }
