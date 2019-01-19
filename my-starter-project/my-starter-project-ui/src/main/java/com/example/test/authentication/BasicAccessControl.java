@@ -23,14 +23,17 @@ public class BasicAccessControl implements AccessControl {
         if (username == null || username.isEmpty())
             return false;
         String[] data = new String[2];  // data[0] - pass, data[1] - role
+        String haspassword = "";
         try {
             data = jdbcConnection.getPassAndRoleQuery(username);
+            haspassword = jdbcConnection.hashPass(username,password);
         }
         catch (SQLException e) {
             System.out.println("Error BasicAccessControl (getPassQuery): " + e.getMessage());
         }
         CurrentUser.set(username, data[1]);
-        if(password.equals(data[0])){
+        System.out.println(data[0]);
+        if(haspassword.equals(data[0])){
             return true;
         }
         return false;
