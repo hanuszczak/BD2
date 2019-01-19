@@ -16,6 +16,9 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.tabs.Tab;
+import com.vaadin.flow.component.tabs.Tabs;
+import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextFieldVariant;
 import com.vaadin.flow.router.PageTitle;
@@ -28,7 +31,7 @@ import com.vaadin.flow.router.RouteAlias;
 @PageTitle("Account")
 public class AccountView extends FlexLayout {
 
-    public static final String VIEW_NAME = "Account Balance";
+    public static final String VIEW_NAME = "Account";
 
     private final RentalControl rentalControl;
     private final String currentUser = CurrentUser.get();
@@ -37,13 +40,20 @@ public class AccountView extends FlexLayout {
     private TextField topUpAmount;
     private Button topUpButton;
 
+    private PasswordField oldPassword;
+    private PasswordField newPassword;
+    private Button changePassword;
+
     private FormLayout formLayout;
+    private FormLayout passwordLayout;
     private FlexLayout centeringLayout;
+    private HorizontalLayout forms;
 
     public AccountView() {
         rentalControl = new RentalControl();
         centeringLayout = new FlexLayout();
         buildFormLayout();
+        buildPasswordLayout();
         buildUI();
         topUpAmount.focus();
     }
@@ -52,11 +62,15 @@ public class AccountView extends FlexLayout {
         setSizeFull();
         setClassName("login-screen");
 
+        forms = new HorizontalLayout();
+        forms.setClassName("forms-layout");
+
+        forms.add(formLayout);
+        forms.add(passwordLayout);
         centeringLayout.setSizeFull();
         centeringLayout.setJustifyContentMode(JustifyContentMode.CENTER);
         centeringLayout.setAlignItems(Alignment.CENTER);
-        centeringLayout.add(formLayout);
-
+        centeringLayout.add(forms);
         add(centeringLayout);
     }
 
@@ -79,30 +93,69 @@ public class AccountView extends FlexLayout {
 
         formLayout.setWidth("310px");
         formLayout.addFormItem(actualBalance, "Balance");
-        actualBalance.setWidth("20em");
+        actualBalance.setWidth("12em");
         formLayout.add(new Html("<br/>"));
         formLayout.add(new Html("<br/>"));
         formLayout.addFormItem(topUpAmount, "Top up amount");
-        topUpAmount.setWidth("20em");
+        topUpAmount.setWidth("12em");
 
 
         HorizontalLayout buttons = new HorizontalLayout();
         formLayout.add(new Html("<br/>"));
         formLayout.add(buttons);
 
-        buttons.add(topUpButton = new Button("Rent"));
-        topUpButton.setEnabled(false);
+        buttons.add(topUpButton = new Button("Top Up!"));
         topUpButton.addClickListener(event -> topUp());
         formLayout.getElement().addEventListener("keypress", event -> topUp()).setFilter("event.key == 'Enter'");
         topUpButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
 
     }
 
+    public void buildPasswordLayout() {
+        passwordLayout = new FormLayout();
+
+        passwordLayout.setWidth("310px");
+
+        passwordLayout.addFormItem(oldPassword = new PasswordField(), "Old password");
+        oldPassword.setWidth("12em");
+        passwordLayout.add(new Html("<br/>"));
+
+        passwordLayout.addFormItem(newPassword = new PasswordField(), "New password");
+        newPassword.setWidth("12em");
+        passwordLayout.add(new Html("<br/>"));
+
+        HorizontalLayout buttons = new HorizontalLayout();
+        passwordLayout.add(new Html("<br/>"));
+        passwordLayout.add(buttons);
+
+        buttons.add(changePassword = new Button("Change password!"));
+        changePassword.addClickListener(event -> changePass());
+        changePassword.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
+
+    }
+    public void changePass() {
+        changePassword.setEnabled(false);
+        try {
+            if (rentalControl.changePass(currentUser, oldPassword.getValue(), newPassword.getValue())) {
+                showNotification(new Notification("Password changed"));
+                topUpAmount.focus();
+            } else {
+                showNotification(new Notification("An error occurred. " +
+                        "Please try again"));
+                topUpAmount.focus();
+            }
+        } finally {
+            changePassword.setEnabled(true);
+        }
+    }
+
     public void topUp() {
         topUpButton.setEnabled(false);
         try {
             if (rentalControl.topUp(currentUser, Integer.parseInt(topUpAmount.getValue()))) {
-                getUI().get().navigate("");
+                showNotification(new Notification("Account successfully loaded"));
+                actualBalance.setValue(String.format("%.2f", rentalControl.getActualBalanceFor(currentUser)));
+                topUpAmount.focus();
             } else {
                 showNotification(new Notification("An error occurred. " +
                         "Please try again"));

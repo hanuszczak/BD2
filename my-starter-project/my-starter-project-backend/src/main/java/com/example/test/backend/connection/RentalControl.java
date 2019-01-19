@@ -93,6 +93,34 @@ public class RentalControl {
     public float getActualBalanceFor(String username) {
         return jdbcConnection.getActualBalanceForUserQuery(username);
     }
+
+    public boolean changePass(String username, String oldPass, String newPass) {
+        String hashPass = new String();
+        String pass = new String();
+        String newHashPass = new String();
+        try {
+            hashPass = jdbcConnection.hashPass(username, oldPass);
+        }
+        catch (SQLException e){
+            System.out.println("Error RentalControl changePass (hashPass): " + e.getMessage());
+        }
+        try {
+            pass = jdbcConnection.getPassAndRoleQuery(username)[0];
+        }
+        catch (SQLException e){
+            System.out.println("Error RentalControl changePass (pass): " + e.getMessage());
+        }
+        if(hashPass.equals(pass)) {
+            try {
+                newHashPass = jdbcConnection.hashPass(username, newPass);
+            }
+            catch (SQLException e){
+                System.out.println("Error RentalControl changePass (newHashPass): " + e.getMessage());
+            }
+            return jdbcConnection.setNewPassword(username, newHashPass);
+        }
+        else return false;
+    }
 }
 
 

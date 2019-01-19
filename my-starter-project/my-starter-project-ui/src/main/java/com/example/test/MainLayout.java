@@ -34,7 +34,7 @@ public class MainLayout extends FlexLayout implements RouterLayout {
             menu.addView(ReturnView.class, ReturnView.VIEW_NAME,
                     VaadinIcon.STEP_BACKWARD.create());
             menu.addView(AccountView.class, AccountView.VIEW_NAME,
-                    VaadinIcon.ABACUS.create());
+                    VaadinIcon.USER.create());
         }
         else {
             menu.addView(CrudView.class, CrudView.VIEW_NAME,

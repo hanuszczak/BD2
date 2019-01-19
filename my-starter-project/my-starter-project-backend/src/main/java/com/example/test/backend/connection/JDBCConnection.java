@@ -81,6 +81,24 @@ public class JDBCConnection {
         return hashpassword;
     }
 
+    public boolean setNewPassword(String username, String newHashPass) {
+        boolean ifSuccess = false;
+        getConnection();
+        try {
+            PreparedStatement stmt = conn.prepareStatement("UPDATE USERS SET PASSWORD = ? WHERE USERNAME = ?");
+            stmt.setString(1, newHashPass);
+            stmt.setString(2, username);
+            stmt.executeUpdate();
+            stmt.close();
+            ifSuccess = true;
+        }
+        catch (SQLException e) {
+            System.out.println("Error JDBCConnection getConnection: " + e.getMessage());
+        }
+        closeConnection();
+        return ifSuccess;
+    }
+
     public boolean newUserQuery(String username, String password, String name, String surname, String email, String phone)
                 throws SQLException {
         String hashpassword = hashPass(username,password);

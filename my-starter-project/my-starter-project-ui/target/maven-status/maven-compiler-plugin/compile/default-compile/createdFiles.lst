@@ -1,6 +1,7 @@
 com\example\test\authentication\AccessControlFactory.class
 com\example\test\crud\SampleCrudLogic.class
 com\example\test\Menu.class
+com\example\test\rental\AccountView.class
 com\example\test\crud\ProductForm.class
 com\example\test\rentalAgencyCrud\CrudView.class
 com\example\test\rentalAgencyCrud\UserForm$IdConverter.class
