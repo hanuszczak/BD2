@@ -1,6 +1,7 @@
 package com.example.test;
 
 import com.example.test.authentication.CurrentUser;
+import com.example.test.rental.AccountView;
 import com.example.test.rental.RentView;
 import com.example.test.rental.ReturnView;
 import com.example.test.rentalAgencyCrud.CrudView;
@@ -32,6 +33,8 @@ public class MainLayout extends FlexLayout implements RouterLayout {
                     VaadinIcon.STEP_FORWARD.create());
             menu.addView(ReturnView.class, ReturnView.VIEW_NAME,
                     VaadinIcon.STEP_BACKWARD.create());
+            menu.addView(AccountView.class, AccountView.VIEW_NAME,
+                    VaadinIcon.ABACUS.create());
         }
         else {
             menu.addView(CrudView.class, CrudView.VIEW_NAME,

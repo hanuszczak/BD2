@@ -84,6 +84,15 @@ public class RentalControl {
     public List<Vehicle> getVehicles() {
         return vehicles;
     }
+
+    public boolean topUp(String username, float topUpAmount) {
+        int accountId = jdbcConnection.getAccountIDQuery(username);
+        return jdbcConnection.topUpQuery(accountId, topUpAmount);
+    }
+
+    public float getActualBalanceFor(String username) {
+        return jdbcConnection.getActualBalanceForUserQuery(username);
+    }
 }
 
 

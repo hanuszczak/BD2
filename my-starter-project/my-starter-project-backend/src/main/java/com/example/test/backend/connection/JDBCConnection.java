@@ -173,6 +173,30 @@ public class JDBCConnection {
         closeConnection();
     }
 
+    public int getAccountIDQuery(String username) {
+        int accountId = 0;
+        getConnection();
+        //TODO
+        closeConnection();
+        return accountId;
+    }
+
+    public boolean topUpQuery(int accountId, float topUp) {
+        getConnection();
+        //TODO
+        //then use procedure CHARGE_OR_LOAD_USER_ACCOUNT
+        closeConnection();
+        return false;
+    }
+
+    public float getActualBalanceForUserQuery(String username) {
+        float balance = 100;
+        getConnection();
+        //TODO
+        closeConnection();
+        return balance;
+    }
+
     public void deleteUserQuery(User user){
         getConnection();
         try {
