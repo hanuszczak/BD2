@@ -154,9 +154,9 @@ public class RaportView extends FlexLayout {
         raportButton.setEnabled(false);
         try {
             if (jdbcConnection.generateRaport(stationBox.getValue(), Integer.parseInt(daysField.getValue()))) {
-                getUI().get().navigate("");
+                getUI().get().navigate("Users");
             } else {
-                showNotification(new Notification("Renting a vehicle failed. " +
+                showNotification(new Notification("Generating a report failed. " +
                         "Please try again"));
                 regionBox.focus();
             }

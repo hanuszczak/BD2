@@ -4,9 +4,11 @@ import com.example.test.backend.rentalAgencyData.*;
 
 import java.awt.print.PrinterAbortException;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Date;
 
 import com.opencsv.*;
 import java.nio.file.Files;
@@ -363,6 +365,7 @@ public class JDBCConnection {
                     CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.NO_ESCAPE_CHARACTER,
                     CSVWriter.DEFAULT_LINE_END);
                 writer.writeAll(rs, true);
+                ifSuccessful = true;
             } catch (IOException ex) {
                 System.out.println("Error JDBCConnection CSVWriter{():" + ex.getMessage());
             }
@@ -483,6 +486,14 @@ public class JDBCConnection {
         return users;
     }
 
+    public List<Rental> getRentalsForUserQuery(String username) {
+        List<Rental> rentals = new ArrayList<>();
+        getConnection();
+        //TODO
+        closeConnection();
+        return rentals;
+    }
+
 
     private UserType getUserTypeFromQuery(int i) {
         UserType userType;
@@ -531,5 +542,11 @@ public class JDBCConnection {
            i = 1;
         }
         return i;
+    }
+
+    private String timestampToInt(Timestamp ts) {
+        Date date = new Date();
+        date.setTime(ts.getTime());
+        return new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss").format(date);
     }
 }
