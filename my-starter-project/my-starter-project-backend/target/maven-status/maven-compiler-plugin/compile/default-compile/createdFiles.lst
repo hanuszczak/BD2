@@ -6,6 +6,7 @@ com\example\test\backend\rentalAgencyData\Region.class
 com\example\test\backend\rentalAgencyData\UserType.class
 com\example\test\backend\data\Availability.class
 com\example\test\backend\MyDataService.class
+com\example\test\backend\connection\JDBCConnection$1.class
 com\example\test\backend\mock\MockDataService.class
 com\example\test\backend\rentalAgencyData\Vehicle.class
 com\example\test\backend\connection\JDBCConnection.class

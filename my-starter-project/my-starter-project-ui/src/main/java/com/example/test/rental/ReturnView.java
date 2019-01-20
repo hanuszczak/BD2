@@ -20,6 +20,8 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import java.util.Collections;
+
 
 @Route(value = "Return", layout = MainLayout.class)
 @PageTitle("Return")
@@ -92,6 +94,7 @@ public class ReturnView extends FlexLayout {
         regionBox = new ComboBox<>();
         regionBox.setItemLabelGenerator(Region::getName);
         regionBox.setEnabled(false);
+        regionBox.setItems(Collections.emptyList());
         regionBox.addValueChangeListener(event -> {
             Region region = regionBox.getValue();
             if(region != null) {
@@ -108,6 +111,7 @@ public class ReturnView extends FlexLayout {
         stationBox = new ComboBox<>();
         stationBox.setItemLabelGenerator(Station::getAddress);
         stationBox.setEnabled(false);
+        stationBox.setItems(Collections.emptyList());
         stationBox.addValueChangeListener(event -> {
             Station station = stationBox.getValue();
             if(station != null) {
@@ -145,7 +149,7 @@ public class ReturnView extends FlexLayout {
     public void returnVehicle() {
         returnButton.setEnabled(false);
         try {
-            if (rentalControl.returnVehicle(currentUser, vehicleBox.getValue(), regionBox.getValue(), stationBox.getValue())) {
+            if (rentalControl.returnVehicle(currentUser, vehicleBox.getValue(), stationBox.getValue())) {
                 getUI().get().navigate("Return");
                 buildUI();
             } else {

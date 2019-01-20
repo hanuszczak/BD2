@@ -2,6 +2,7 @@ package com.example.test.backend.connection;
 
 import com.example.test.backend.rentalAgencyData.*;
 
+import java.awt.print.PrinterAbortException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -126,8 +127,7 @@ public class JDBCConnection {
         return number;
     }
 
-    //fixme - region tutaj raczej nie jest potrzebny, chyba że dokładamy jakąś dodatkową funkcjonalność
-    public boolean rentQuery(String username, Region region, Station station, VehicleType vehicleType, Vehicle vehicle){
+    public boolean rentQuery(String username, Station station, VehicleType vehicleType, Vehicle vehicle){
         getConnection();
         try{
             PreparedStatement stmt = conn.prepareStatement("DECLARE " +
@@ -145,14 +145,13 @@ public class JDBCConnection {
             stmt.close();
             return true;
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection rentQuery():" + e.getMessage());
         }
         closeConnection();
         return false;
     }
 
-    //fixme - region tutaj raczej nie jest potrzebny, chyba że dokładamy jakąś dodatkową funkcjonalność
-    public boolean returnQuery(String username, Vehicle vehicle, Region region, Station station){
+    public boolean returnQuery(String username, Vehicle vehicle, Station station){
         getConnection();
         try{
             PreparedStatement stmt = conn.prepareStatement("DECLARE " +
@@ -172,7 +171,7 @@ public class JDBCConnection {
             stmt.close();
             return true;
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection returnQuery():" + e.getMessage());
         }
         closeConnection();
         return false;
@@ -218,7 +217,7 @@ public class JDBCConnection {
             rset.close();
             stmt.close();
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection getStationsQuery():" + e.getMessage());
         }
         closeConnection();
         return  stations;
@@ -245,7 +244,7 @@ public class JDBCConnection {
             rset.close();
             stmt.close();
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection getVehiclesTypesQuery():" + e.getMessage());
         }
         closeConnection();
         return vehicleTypes;
@@ -255,9 +254,9 @@ public class JDBCConnection {
         List<Vehicle> vehicles = new ArrayList<>();
         getConnection();
         try{
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM vehicles WHERE station_id = ? AND vehicle_type = ? AND vehicles.is_free=1");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM vehicles WHERE station_id = ? AND type_id = ? AND vehicles.is_free=1");
             stmt.setInt(1, station.getId());
-            stmt.setInt(2,vehicleType.getId());
+            stmt.setInt(2, vehicleType.getId());
             ResultSet rset = stmt.executeQuery();
             while (rset.next()) {
                 Vehicle vehicle = new Vehicle();
@@ -270,7 +269,7 @@ public class JDBCConnection {
             rset.close();
             stmt.close();
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection getVehiclesQuery():" + e.getMessage());
         }
         closeConnection();
         return vehicles;
@@ -297,18 +296,36 @@ public class JDBCConnection {
             rset.close();
             stmt.close();
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection getRentedVehiclesQuery():" + e.getMessage());
         }
         closeConnection();
         return vehicles;
     }
 
 
-    public void updateUserQuery(int id, User user){
+    public boolean updateUserQuery(User user){
+        boolean ifSuccessful = false;
         getConnection();
-        //TODO
-        //update all attributes, just for sure
+        try {
+            PreparedStatement stmt = conn.prepareStatement("UPDATE USERS SET USER_TYPE_ID = ?," +
+                    "NAME = ?, SURNAME = ?, EMAIL = ?, PHONE = ?, IS_ACTIVE = ?" +
+                    "WHERE USER_ID = ?");
+            stmt.setInt(1, getUerTypeForQuery(user.getUserType()));
+            stmt.setString(2, user.getName());
+            stmt.setString(3, user.getSurname());
+            stmt.setString(4, user.getEmail());
+            stmt.setLong(5, user.getPhone());
+            stmt.setInt(6, getActivityForQuery(user.getIsActive()));
+            stmt.setInt(7, user.getId());
+            stmt.executeUpdate();
+            stmt.close();
+            ifSuccessful = true;
+        }
+        catch (SQLException e) {
+            System.out.println("Error JDBCConnection updateUserQuery():" + e.getMessage());
+        }
         closeConnection();
+        return ifSuccessful;
     }
 
     public int getAccountIDQuery(String username){
@@ -323,7 +340,7 @@ public class JDBCConnection {
             rset.close();
             stmt.close();
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection getAccountIDQuery():" + e.getMessage());
         }
         closeConnection();
         return accountId;
@@ -342,7 +359,7 @@ public class JDBCConnection {
             stmt.close();
             return true;
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection topUpQuery():" + e.getMessage());
         }
         closeConnection();
         return false;
@@ -363,7 +380,7 @@ public class JDBCConnection {
             stmt.close();
             closeConnection();
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection getActualBalance():" + e.getMessage());
         }
         closeConnection();
         return balance;
@@ -437,6 +454,21 @@ public class JDBCConnection {
         return userType;
     }
 
+    private int getUerTypeForQuery(UserType type) {
+        int i = 0;
+        switch (type) {
+            case ADMIN:
+                i = 1;
+                break;
+            case WORKER:
+                i = 3;
+                break;
+            default:
+                i = 2;
+        }
+        return i;
+    }
+
     private Activity getActivityFromQuery(int i) {
         Activity activity;
         if(i == 0) {
@@ -446,5 +478,13 @@ public class JDBCConnection {
             activity = Activity.ACTIVE;
         }
         return activity;
+    }
+
+    private int getActivityForQuery(Activity active) {
+        int i = 0;
+        if(active == Activity.ACTIVE) {
+           i = 1;
+        }
+        return i;
     }
 }

@@ -40,14 +40,13 @@ public class UserDataService extends MyDataService {
     }
 
 
-    public synchronized void updateUser(User u) {
+    public synchronized boolean updateUser(User u) {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getId() == u.getId()) {
-                int id = users.get(i).getId();
                 users.set(i, u);
-                jdbcConnection.updateUserQuery(id, u);
-                return;
+                return jdbcConnection.updateUserQuery(u);
             }
+            return false;
         }
 
         throw new IllegalArgumentException("No product with id " + u.getId()

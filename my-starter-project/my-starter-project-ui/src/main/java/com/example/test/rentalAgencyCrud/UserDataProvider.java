@@ -51,7 +51,8 @@ public class UserDataProvider extends ListDataProvider<User> {
 
         setFilter(user -> passesFilter(user.getName(), filterText)
                 || passesFilter(user.getSurname(), filterText)
-                || passesFilter(user.getUsername(), filterText));
+                || passesFilter(user.getUsername(), filterText)
+                || passesFilter(user.getEmail(), filterText));
     }
 
     @Override

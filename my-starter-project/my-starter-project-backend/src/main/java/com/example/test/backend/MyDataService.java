@@ -16,7 +16,7 @@ public abstract class MyDataService implements Serializable {
 
     public abstract Collection<User> getAllUsers();
 
-    public abstract void updateUser(User u);
+    public abstract boolean updateUser(User u);
 
     public abstract void deleteUser(int userId);
 
