@@ -4,9 +4,11 @@ import com.example.test.backend.rentalAgencyData.*;
 
 import java.awt.print.PrinterAbortException;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Date;
 
 
 public class JDBCConnection {
@@ -453,6 +455,14 @@ public class JDBCConnection {
         return users;
     }
 
+    public List<Rental> getRentalsForUserQuery(String username) {
+        List<Rental> rentals = new ArrayList<>();
+        getConnection();
+        //TODO
+        closeConnection();
+        return rentals;
+    }
+
 
     private UserType getUserTypeFromQuery(int i) {
         UserType userType;
@@ -501,5 +511,11 @@ public class JDBCConnection {
            i = 1;
         }
         return i;
+    }
+
+    private String timestampToInt(Timestamp ts) {
+        Date date = new Date();
+        date.setTime(ts.getTime());
+        return new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss").format(date);
     }
 }

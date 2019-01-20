@@ -4,6 +4,7 @@ com\example\test\backend\rentalAgencyData\VehicleType.class
 com\example\test\backend\rentalAgencyData\User.class
 com\example\test\backend\rentalAgencyData\Region.class
 com\example\test\backend\rentalAgencyData\UserType.class
+com\example\test\backend\rentalAgencyData\Rental.class
 com\example\test\backend\data\Availability.class
 com\example\test\backend\MyDataService.class
 com\example\test\backend\connection\JDBCConnection$1.class

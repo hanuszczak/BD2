@@ -4,6 +4,7 @@ C:\ELKA\BD2\my-starter-project\my-starter-project-backend\src\main\java\com\exam
 C:\ELKA\BD2\my-starter-project\my-starter-project-backend\src\main\java\com\example\test\backend\mock\MockDataService.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-backend\src\main\java\com\example\test\backend\connection\JDBCConnection.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-backend\src\main\java\com\example\test\backend\mock\MockDataGenerator.java
+C:\ELKA\BD2\my-starter-project\my-starter-project-backend\src\main\java\com\example\test\backend\rentalAgencyData\Rental.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-backend\src\main\java\com\example\test\backend\rentalAgencyData\Station.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-backend\src\main\java\com\example\test\backend\rentalAgencyData\VehicleType.java
 C:\ELKA\BD2\my-starter-project\my-starter-project-backend\src\main\java\com\example\test\backend\connection\RentalControl.java
