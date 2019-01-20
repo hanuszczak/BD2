@@ -19,6 +19,8 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 
+import java.util.Collections;
+
 
 @Route(value = "Rent", layout = MainLayout.class)
 @RouteAlias(value = "", layout = MainLayout.class)
@@ -86,6 +88,8 @@ public class RentView extends FlexLayout {
         stationBox = new ComboBox<>();
         stationBox.setItemLabelGenerator(Station::getAddress);
         stationBox.setEnabled(false);
+
+        stationBox.setItems(Collections.emptyList());
         stationBox.addValueChangeListener(event -> {
            Station station = stationBox.getValue();
            if(station != null) {
@@ -103,6 +107,7 @@ public class RentView extends FlexLayout {
         vehicleTypeBox = new ComboBox<>();
         vehicleTypeBox.setItemLabelGenerator(VehicleType::getType);
         vehicleTypeBox.setEnabled(false);
+        vehicleTypeBox.setItems(Collections.emptyList());
         vehicleTypeBox.addValueChangeListener(event ->{
            VehicleType vehicleType = vehicleTypeBox.getValue();
            if(vehicleType != null) {
@@ -119,6 +124,7 @@ public class RentView extends FlexLayout {
         vehicleBox = new ComboBox<>();
         vehicleBox.setItemLabelGenerator(Vehicle::toString);
         vehicleBox.setEnabled(false);
+        vehicleBox.setItems(Collections.emptyList());
         vehicleBox.addValueChangeListener(event -> {
             Vehicle vehicle = vehicleBox.getValue();
             if(vehicle != null){
@@ -158,7 +164,7 @@ public class RentView extends FlexLayout {
     public void rent() {
         rentButton.setEnabled(false);
         try {
-            if (rentalControl.rent(currentUser, regionBox.getValue(), stationBox.getValue(), vehicleTypeBox.getValue(), vehicleBox.getValue() )) {
+            if (rentalControl.rent(currentUser, stationBox.getValue(), vehicleTypeBox.getValue(), vehicleBox.getValue() )) {
                 getUI().get().navigate("");
             } else {
                 showNotification(new Notification("Renting a vehicle failed. " +
