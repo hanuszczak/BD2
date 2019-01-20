@@ -15,6 +15,7 @@ com\example\test\rentalAgencyCrud\UserGrid.class
 com\example\test\authentication\LoginScreen.class
 com\example\test\rental\RentView.class
 com\example\test\rentalAgencyCrud\CrudLogic.class
+com\example\test\rentalAgencyCrud\RaportView.class
 com\example\test\crud\ProductDataProvider.class
 com\example\test\rentalAgencyCrud\UserForm$PhoneConverter.class
 com\example\test\rentalAgencyCrud\UserDataProvider.class

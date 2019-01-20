@@ -21,9 +21,11 @@ import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextFieldVariant;
+import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
+import net.bytebuddy.build.Plugin;
 
 
 @Route(value = "Account", layout = MainLayout.class)
@@ -90,6 +92,7 @@ public class AccountView extends FlexLayout {
         topUpAmount.setPreventInvalidInput(true);
         topUpAmount.setSuffixComponent(new Span("zł"));
         topUpAmount.addThemeVariants(TextFieldVariant.LUMO_ALIGN_RIGHT);
+        topUpAmount.setValueChangeMode(ValueChangeMode.EAGER);
 
         formLayout.setWidth("310px");
         formLayout.addFormItem(actualBalance, "Balance");

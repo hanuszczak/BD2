@@ -328,6 +328,14 @@ public class JDBCConnection {
         return ifSuccessful;
     }
 
+    public boolean generateRaport(Station station, int daysNo) {
+        boolean ifSuccessful = false;
+        getConnection();
+        //TODO
+        closeConnection();
+        return ifSuccessful;
+    }
+
     public int getAccountIDQuery(String username){
         int accountId = 0;
         getConnection();

@@ -17,17 +17,18 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 
-import java.awt.*;
 import java.time.LocalDate;
 import java.util.Collections;
 
 
 @Route(value = "Raport", layout = MainLayout.class)
-@RouteAlias(value = "", layout = MainLayout.class)
+//@RouteAlias(value = "", layout = MainLayout.class)
 @PageTitle("Raport")
 public class RaportView extends FlexLayout {
 
@@ -38,14 +39,7 @@ public class RaportView extends FlexLayout {
 
     private ComboBox<Region> regionBox;
     private ComboBox<Station> stationBox;
-    private DatePicker startDatePicker;
-    private DatePicker endDatePicker;
-    private ComboBox<Integer> startHours;
-    private ComboBox<Integer> startMinutes;
-    private ComboBox<Integer> endHours;
-    private ComboBox<Integer> endMinutes;
-    private Label seperator;
-
+    private TextField daysField;
 
     private Button raportButton;
 
@@ -95,36 +89,34 @@ public class RaportView extends FlexLayout {
                 stationBox.setEnabled(false);
             }
         });
-        startDatePicker = new DatePicker();
 
         stationBox = new ComboBox<>();
         stationBox.setItemLabelGenerator(Station::getAddress);
         stationBox.setEnabled(false);
-
         stationBox.setItems(Collections.emptyList());
+        stationBox.addValueChangeListener(event -> {
+                    Station station = stationBox.getValue();
+                    if (station != null) {
+                        daysField.setEnabled(true);
+                    } else {
+                        daysField.setEnabled(false);
+                    }
+        });
 
-        startDatePicker = new DatePicker();
-        startDatePicker.setLabel("From date");
-//        startDatePicker.addValueChangeListener(event -> {
-//            LocalDate selectedDate = event.getValue();
-//            if (selectedDate != null) {
-//                endDatePicker.setMin(selectedDate);
-//            }
-//        });
+        daysField = new TextField();
+        daysField.setPattern("[0-9]*");
+        daysField.setPreventInvalidInput(true);
+        daysField.setEnabled(false);
+        daysField.setValueChangeMode(ValueChangeMode.EAGER);
 
-//        endDatePicker = new DatePicker();
-//        endDatePicker.setLabel("To date");
-//        endDatePicker.addValueChangeListener(event -> {
-//            LocalDate selectedDate = event.getValue();
-//            if (selectedDate != null) {
-//                startDatePicker.setMax(selectedDate);
-//            }
-//        });
-
-        startHours = new ComboBox<>("");
-        startHours.setWidth("2em");
-        startHours.setItems(0, 1, 2, 3);
-
+        daysField.addValueChangeListener(event -> {
+           if(!daysField.isEmpty()) {
+               raportButton.setEnabled(true);
+           }
+           else {
+               raportButton.setEnabled(false);
+           }
+        });
 
         formLayout.setWidth("310px");
         formLayout.addFormItem(regionBox, "Choose district");
@@ -133,13 +125,10 @@ public class RaportView extends FlexLayout {
         formLayout.addFormItem(stationBox, "Choose station");
         stationBox.setWidth("20em");
         formLayout.add(new Html("<br/>"));
-        formLayout.addFormItem(startDatePicker, "Choose type of vehicle");
-        startDatePicker.setWidth("20em");
+        formLayout.addFormItem(daysField, "Create raport for X days back");
+        daysField.setWidth("20em");
         formLayout.add(new Html("<br/>"));
-        formLayout.addFormItem(endDatePicker, "Choose vehicle");
-        endDatePicker.setWidth("20em");
-        formLayout.add(new Html("<br/>"));
-        //formLayout.addFormItem(startHours);
+
 
         HorizontalLayout buttons = new HorizontalLayout();
         formLayout.add(new Html("<br/>"));
@@ -147,7 +136,14 @@ public class RaportView extends FlexLayout {
 
         buttons.add(raportButton = new Button("Generate Raport"));
         raportButton.setEnabled(false);
-        raportButton.addClickListener(event -> generateRaport());
+        raportButton.addClickListener(event -> {
+            if(daysField.isEmpty()) {
+                showNotification(new Notification("Please enter number of days"));
+                }
+            else {
+                generateRaport();
+            }
+        });
         formLayout.getElement().addEventListener("keypress", event -> generateRaport()).setFilter("event.key == 'Enter'");
         raportButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
 
@@ -155,18 +151,18 @@ public class RaportView extends FlexLayout {
 
 
     public void generateRaport() {
-//        raportButton.setEnabled(false);
-//        try {
-//            if (jdbcConnection .generateReport(stationBox.getValue(), startDatePicker.getValue())) {
-//                getUI().get().navigate("");
-//            } else {
-//                showNotification(new Notification("Renting a vehicle failed. " +
-//                        "Please try again"));
-//                regionBox.focus();
-//            }
-//        } finally {
-//            raportButton.setEnabled(true);
-//        }
+        raportButton.setEnabled(false);
+        try {
+            if (jdbcConnection.generateRaport(stationBox.getValue(), Integer.parseInt(daysField.getValue()))) {
+                getUI().get().navigate("");
+            } else {
+                showNotification(new Notification("Renting a vehicle failed. " +
+                        "Please try again"));
+                regionBox.focus();
+            }
+        } finally {
+            raportButton.setEnabled(true);
+        }
     }
 
     private void showNotification(Notification notification) {
