@@ -217,7 +217,7 @@ public class JDBCConnection {
             rset.close();
             stmt.close();
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getStationsQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection getStationsForRegionQuery():" + e.getMessage());
         }
         closeConnection();
         return  stations;
@@ -244,7 +244,7 @@ public class JDBCConnection {
             rset.close();
             stmt.close();
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getVehiclesTypesQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection getVehicleTypesForStationQuery():" + e.getMessage());
         }
         closeConnection();
         return vehicleTypes;
@@ -269,7 +269,7 @@ public class JDBCConnection {
             rset.close();
             stmt.close();
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection getVehiclesQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection getVehiclesForStationQuery():" + e.getMessage());
         }
         closeConnection();
         return vehicles;
@@ -349,17 +349,22 @@ public class JDBCConnection {
     public boolean topUpQuery(int accountId, float topUp){
         getConnection();
         try{
-            PreparedStatement stmt = conn.prepareStatement("begin " +
-                    "    charge_or_load_user_account(?,?);" +
-                    "end");
-            stmt.setInt(1, accountId);
-            stmt.setFloat(2, topUp);
-            ResultSet rset = stmt.executeQuery();
-            rset.close();
-            stmt.close();
+            //PreparedStatement stmt = conn.prepareStatement("begin " +
+            //        "    charge_or_load_user_account(?,?);" +
+            //        "end");
+            CallableStatement cs = null;
+            cs = conn.prepareCall("{call charge_or_load_user_account(?, ?)}");
+            //stmt.setInt(1, accountId);
+            cs.setInt(1, accountId);
+            //stmt.setFloat(2, topUp);
+            cs.setFloat(2, topUp);
+            //ResultSet rset = stmt.executeQuery();
+            ResultSet rset = cs.executeQuery();
+            //rset.close();
+            //stmt.close();
             return true;
         } catch (SQLException e) {
-            System.out.println("Error JDBCConnection topUpQuery():" + e.getMessage());
+            System.out.println("Error JDBCConnection topUpQuery{():" + e.getMessage());
         }
         closeConnection();
         return false;
