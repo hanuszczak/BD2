@@ -333,7 +333,7 @@ public class JDBCConnection {
         getConnection();
         try{
             PreparedStatement stmt = conn.prepareStatement("begin " +
-                    "    charge_or_load_user_account(?,?)" +
+                    "    charge_or_load_user_account(?,?);" +
                     "end");
             stmt.setInt(1, accountId);
             stmt.setFloat(2, topUp);
