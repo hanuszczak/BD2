@@ -5,6 +5,7 @@ import com.example.test.rental.AccountView;
 import com.example.test.rental.RentView;
 import com.example.test.rental.ReturnView;
 import com.example.test.rentalAgencyCrud.CrudView;
+import com.example.test.rentalAgencyCrud.RaportView;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
@@ -39,8 +40,8 @@ public class MainLayout extends FlexLayout implements RouterLayout {
         else {
             menu.addView(CrudView.class, CrudView.VIEW_NAME,
                     VaadinIcon.USERS.create());
-            menu.addView(SampleCrudView.class, SampleCrudView.VIEW_NAME,
-                    VaadinIcon.ABACUS.create());
+            menu.addView(RaportView.class, RaportView.VIEW_NAME,
+                    VaadinIcon.CLIPBOARD_TEXT.create());
         }
         add(menu);
     }
