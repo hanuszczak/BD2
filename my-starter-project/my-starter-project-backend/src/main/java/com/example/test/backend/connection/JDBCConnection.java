@@ -146,11 +146,12 @@ public class JDBCConnection {
             stmt.close();
 
             CallableStatement cs = null;
-            cs = conn.prepareCall("{call rent_vehicle2(?,?,?,?)}");
+            //cs = conn.prepareCall("{call rent_vehicle2(?,?,?,?)}");
+            cs = conn.prepareCall("{call rent_bike(?,?,?)}");
             cs.setInt(1, station.getId());
             cs.setInt(2, user_id);
             cs.setInt(3, vehicleType.getId());
-            cs.setInt(4, vehicle.getId());
+            //cs.setInt(4, vehicle.getId());
             cs.execute();
             cs.close();
             System.out.println("Call success");
