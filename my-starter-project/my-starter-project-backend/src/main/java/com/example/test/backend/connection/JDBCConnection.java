@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.opencsv.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class JDBCConnection {
 
@@ -339,7 +345,29 @@ public class JDBCConnection {
     public boolean generateRaport(Station station, int daysNo) {
         boolean ifSuccessful = false;
         getConnection();
-        //TODO
+        try{
+            PreparedStatement st = conn.prepareStatement("SELECT SYSDATE - ? as TheTime FROM dual");
+            st.setFloat(1, daysNo);
+            ResultSet rs1 = st.executeQuery();
+            rs1.next();
+            Timestamp time = rs1.getTimestamp("TheTime");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM vehiclerentals WHERE date_from > ?");
+            stmt.setTimestamp(1, time);
+            ResultSet rs = stmt.executeQuery();
+            System.out.print(rs);
+            String fileName = "src/main/resources/out.csv";
+            Path myPath = Paths.get(fileName);
+            try {CSVWriter writer = new CSVWriter(Files.newBufferedWriter(myPath,
+                    StandardCharsets.UTF_8), CSVWriter.DEFAULT_SEPARATOR,
+                    CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.NO_ESCAPE_CHARACTER,
+                    CSVWriter.DEFAULT_LINE_END);
+                writer.writeAll(rs, true);
+            } catch (IOException ex) {
+                System.out.println("Error JDBCConnection CSVWriter{():" + ex.getMessage());
+            }
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection topUpQuery{():" + e.getMessage());
+        }
         closeConnection();
         return ifSuccessful;
     }
