@@ -10,6 +10,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Date;
 
+import com.opencsv.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class JDBCConnection {
 
@@ -130,6 +136,7 @@ public class JDBCConnection {
     }
 
     public boolean rentQuery(String username, Station station, VehicleType vehicleType, Vehicle vehicle){
+        boolean ifSuccess = false;
         getConnection();
         try{
             PreparedStatement stmt = conn.prepareStatement("SELECT user_id from users where username = ?");
@@ -141,23 +148,25 @@ public class JDBCConnection {
             stmt.close();
 
             CallableStatement cs = null;
-            cs = conn.prepareCall("{call rent_vehicle(?,?,?,?)}");
+            //cs = conn.prepareCall("{call rent_vehicle2(?,?,?,?)}");
+            cs = conn.prepareCall("{call rent_bike(?,?,?)}");
             cs.setInt(1, station.getId());
             cs.setInt(2, user_id);
             cs.setInt(3, vehicleType.getId());
-            cs.setInt(4, vehicle.getId());
-            ResultSet rset2 = cs.executeQuery();
-            rset2.close();
+            //cs.setInt(4, vehicle.getId());
+            cs.execute();
             cs.close();
-            return true;
+            System.out.println("Call success");
+            ifSuccess = true;
         } catch (SQLException e) {
             System.out.println("Error JDBCConnection rentQuery():" + e.getMessage());
         }
         closeConnection();
-        return false;
+        return ifSuccess;
     }
 
     public boolean returnQuery(String username, Vehicle vehicle, Station station){
+        boolean ifSuccess = false;
         getConnection();
         try{
             PreparedStatement stmt = conn.prepareStatement("SELECT rental_id from vehiclerentals " +
@@ -175,16 +184,14 @@ public class JDBCConnection {
             cs = conn.prepareCall("{call return_bike(?,?)}");
             cs.setInt(1, rent_id);
             cs.setInt(2, station.getId());
-            ResultSet rset2 = cs.executeQuery();
-            rset2.close();
+            cs.execute();
             cs.close();
-
-            return true;
+            ifSuccess = true;
         } catch (SQLException e) {
             System.out.println("Error JDBCConnection returnQuery():" + e.getMessage());
         }
         closeConnection();
-        return false;
+        return ifSuccess;
     }
 
     public List<Region> getRegionsQuery() {
@@ -341,7 +348,30 @@ public class JDBCConnection {
     public boolean generateRaport(Station station, int daysNo) {
         boolean ifSuccessful = false;
         getConnection();
-        //TODO
+        try{
+            PreparedStatement st = conn.prepareStatement("SELECT SYSDATE - ? as TheTime FROM dual");
+            st.setFloat(1, daysNo);
+            ResultSet rs1 = st.executeQuery();
+            rs1.next();
+            Timestamp time = rs1.getTimestamp("TheTime");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM vehiclerentals WHERE date_from > ?");
+            stmt.setTimestamp(1, time);
+            ResultSet rs = stmt.executeQuery();
+            System.out.print(rs);
+            String fileName = "src/main/resources/out.csv";
+            Path myPath = Paths.get(fileName);
+            try {CSVWriter writer = new CSVWriter(Files.newBufferedWriter(myPath,
+                    StandardCharsets.UTF_8), CSVWriter.DEFAULT_SEPARATOR,
+                    CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.NO_ESCAPE_CHARACTER,
+                    CSVWriter.DEFAULT_LINE_END);
+                writer.writeAll(rs, true);
+                ifSuccessful = true;
+            } catch (IOException ex) {
+                System.out.println("Error JDBCConnection CSVWriter{():" + ex.getMessage());
+            }
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection topUpQuery{():" + e.getMessage());
+        }
         closeConnection();
         return ifSuccessful;
     }
@@ -365,6 +395,7 @@ public class JDBCConnection {
     }
 
     public boolean topUpQuery(int accountId, float topUp){
+        boolean ifSuccess = false;
         getConnection();
         try{
             CallableStatement cs = null;
@@ -374,12 +405,12 @@ public class JDBCConnection {
             ResultSet rset = cs.executeQuery();
             rset.close();
             cs.close();
-            return true;
+            ifSuccess = true;
         } catch (SQLException e) {
             System.out.println("Error JDBCConnection topUpQuery{():" + e.getMessage());
         }
         closeConnection();
-        return false;
+        return ifSuccess;
     }
 
     public float getActualBalanceForUserQuery(String username){
