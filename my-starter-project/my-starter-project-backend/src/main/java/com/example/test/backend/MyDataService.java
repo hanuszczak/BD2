@@ -6,6 +6,7 @@ import com.example.test.backend.dataServiceRentalAgency.UserDataService;
 import com.example.test.backend.rentalAgencyData.User;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.Collection;
 
 /**
@@ -15,7 +16,7 @@ public abstract class MyDataService implements Serializable {
 
     public abstract Collection<User> getAllUsers();
 
-    public abstract void updateUser(User u);
+    public abstract void updateUser(User u) throws SQLException;
 
     public abstract void deleteUser(int userId);
 

@@ -126,16 +126,54 @@ public class JDBCConnection {
         return number;
     }
 
-    public boolean rentQuery(String username, Region region, Station station, VehicleType vehicleType, Vehicle vehicle) {
+    //fixme - region tutaj raczej nie jest potrzebny, chyba że dokładamy jakąś dodatkową funkcjonalność
+    public boolean rentQuery(String username, Region region, Station station, VehicleType vehicleType, Vehicle vehicle){
         getConnection();
-        //TODO
+        try{
+            PreparedStatement stmt = conn.prepareStatement("DECLARE " +
+                    "   userid NUMBER; " +
+                    "begin " +
+                    "    SELECT user_id into userid from users where username = ?; " +
+                    "    rent_bike(?,userid,?); " +
+                    "end");
+            stmt.setString(1, username);
+            stmt.setInt(2, station.getId());
+            stmt.setInt(3, vehicleType.getId());
+            ResultSet rset = stmt.executeQuery();
+
+            rset.close();
+            stmt.close();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
         return false;
     }
 
-    public boolean returnQuery(String username, Vehicle vehicle, Region region, Station station) {
+    //fixme - region tutaj raczej nie jest potrzebny, chyba że dokładamy jakąś dodatkową funkcjonalność
+    public boolean returnQuery(String username, Vehicle vehicle, Region region, Station station){
         getConnection();
-        //TODO
+        try{
+            PreparedStatement stmt = conn.prepareStatement("DECLARE " +
+                    "   rentid NUMBER; " +
+                    "begin " +
+                    "    SELECT rental_id into rentid from vehiclerentals " +
+                    "    INNER JOIN users ON vehiclerentals.user_id = users.user_id " +
+                    "    where users.username = ? AND vehiclerentals.vehicle_id = ?; " +
+                    "    return_bike(rentid,?); " +
+                    "end;");
+            stmt.setString(1, username);
+            stmt.setInt(2, vehicle.getId());
+            stmt.setInt(3, station.getId());
+            ResultSet rset = stmt.executeQuery();
+
+            rset.close();
+            stmt.close();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
         return false;
     }
@@ -143,74 +181,190 @@ public class JDBCConnection {
     public List<Region> getRegionsQuery() {
         List<Region> regions = new ArrayList<>();
         getConnection();
-        //TODO
+        try {
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM regions");
+            ResultSet rset = stmt.executeQuery();
+            while (rset.next()) {
+                Region region = new Region();
+                region.setId(rset.getInt(1));
+                region.setName(rset.getString(2));
+                regions.add(region);
+            }
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
-
         return regions;
     }
 
-    public List<Station> getStationsForRegionQuery(Region region) {
+    public List<Station> getStationsForRegionQuery(Region region){
         List<Station> stations = new ArrayList<>();
         getConnection();
-        //TODO
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM stations WHERE region_id = ?");
+            stmt.setInt(1, region.getId());
+            ResultSet rset = stmt.executeQuery();
+            while (rset.next()) {
+                Station station = new Station();
+                station.setId(rset.getInt(1));
+                station.setAddress(rset.getString(2));
+                station.setLimit(rset.getInt(3));
+                station.setFreeVehicles(rset.getInt(4));
+                station.setRegionId(rset.getInt(5));
+                stations.add(station);
+            }
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
-
         return  stations;
     }
 
-    public List<VehicleType> getVehicleTypesForStationQuery(Station station) {
+    public List<VehicleType> getVehicleTypesForStationQuery(Station station){
         List<VehicleType> vehicleTypes = new ArrayList<>();
         getConnection();
-        //TODO
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*), vehicletypes.type_id, vehicletypes.type, vehicletypes.cost, vehicletypes.min_balance FROM vehicletypes " +
+                    "INNER JOIN vehicles ON vehicletypes.type_id = vehicles.type_id " +
+                    "WHERE vehicles.station_id = ? AND vehicles.is_free=1 " +
+                    "GROUP BY vehicletypes.type_id, vehicletypes.type, vehicletypes.cost, vehicletypes.min_balance");
+            stmt.setInt(1, station.getId());
+            ResultSet rset = stmt.executeQuery();
+            while (rset.next()) {
+                VehicleType vehicleT = new VehicleType();
+                vehicleT.setId(rset.getInt(2));
+                vehicleT.setType(rset.getString(3));
+                vehicleT.setCost(rset.getFloat(4));
+                vehicleT.setMin_balance(rset.getFloat(5));
+                vehicleTypes.add(vehicleT);
+            }
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
-
         return vehicleTypes;
     }
 
     public List<Vehicle> getVehiclesForStationQuery(Station station, VehicleType vehicleType){
         List<Vehicle> vehicles = new ArrayList<>();
         getConnection();
-        //TODO
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM vehicles WHERE station_id = ? AND vehicle_type = ? AND vehicles.is_free=1");
+            stmt.setInt(1, station.getId());
+            stmt.setInt(2,vehicleType.getId());
+            ResultSet rset = stmt.executeQuery();
+            while (rset.next()) {
+                Vehicle vehicle = new Vehicle();
+                vehicle.setId(rset.getInt(1));
+                vehicle.setFree(rset.getBoolean(2));
+                vehicle.setStationId(rset.getInt(3));
+                vehicle.setTypeId(rset.getInt(4));
+                vehicles.add(vehicle);
+            }
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
-
         return vehicles;
     }
 
-    public List<Vehicle> getRentedVehiclesQuery(String username) {
+    public List<Vehicle> getRentedVehiclesQuery(String username){
         List<Vehicle> vehicles = new ArrayList<>();
         getConnection();
-        //TODO
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELECT vehicles.* FROM vehiclerentals " +
+                    "INNER JOIN users ON vehiclerentals.user_id = users.user_id " +
+                    "INNER JOIN vehicles ON vehiclerentals.vehicle_id = vehicles.vehicle_id " +
+                    "WHERE users.username = ? and vehiclerentals.DATE_TO is NULL");
+            stmt.setString(1, username);
+            ResultSet rset = stmt.executeQuery();
+            while (rset.next()) {
+                Vehicle vehicle = new Vehicle();
+                vehicle.setId(rset.getInt(1));
+                vehicle.setFree(rset.getBoolean(2));
+                vehicle.setStationId(rset.getInt(3));
+                vehicle.setTypeId(rset.getInt(4));
+                vehicles.add(vehicle);
+            }
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
         return vehicles;
     }
 
-    public void updateUserQuery(int id, User user) {
+
+    public void updateUserQuery(int id, User user){
         getConnection();
         //TODO
         //update all attributes, just for sure
         closeConnection();
     }
 
-    public int getAccountIDQuery(String username) {
+    public int getAccountIDQuery(String username){
         int accountId = 0;
         getConnection();
-        //TODO
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELECT account_id FROM users where username=?");
+            stmt.setString(1, username);
+            ResultSet rset = stmt.executeQuery();
+            rset.next();
+            accountId = rset.getInt(1);
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
         return accountId;
     }
 
-    public boolean topUpQuery(int accountId, float topUp) {
+    public boolean topUpQuery(int accountId, float topUp){
         getConnection();
-        //TODO
-        //then use procedure CHARGE_OR_LOAD_USER_ACCOUNT
+        try{
+            PreparedStatement stmt = conn.prepareStatement("begin " +
+                    "    charge_or_load_user_account(?,?)" +
+                    "end");
+            stmt.setInt(1, accountId);
+            stmt.setFloat(2, topUp);
+            ResultSet rset = stmt.executeQuery();
+            rset.close();
+            stmt.close();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
         return false;
     }
 
-    public float getActualBalanceForUserQuery(String username) {
+    public float getActualBalanceForUserQuery(String username){
         float balance = 100;
         getConnection();
-        //TODO
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELECT accounts.balance FROM accounts " +
+                    "INNER JOIN users ON accounts.account_id = users.account_id " +
+                    "where users.username=?");
+            stmt.setString(1, username);
+            ResultSet rset = stmt.executeQuery();
+            rset.next();
+            balance = rset.getFloat(1);
+            rset.close();
+            stmt.close();
+            closeConnection();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRegionsQuery():" + e.getMessage());
+        }
         closeConnection();
         return balance;
     }

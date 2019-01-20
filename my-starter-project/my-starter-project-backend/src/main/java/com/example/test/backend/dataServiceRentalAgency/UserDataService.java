@@ -9,6 +9,7 @@ import com.example.test.backend.mock.MockDataGenerator;
 import com.example.test.backend.rentalAgencyData.User;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.List;
 
 /**

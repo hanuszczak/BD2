@@ -8,9 +8,9 @@ public class VehicleType implements Serializable {
     @NotNull
     private int id = -1;
     @NotNull
-    private int cost = 0;
+    private float cost = 0;
     @NotNull
-    private int min_balance = 0;
+    private float min_balance = 0;
     @NotNull
     private String type = "type";
 
@@ -22,19 +22,19 @@ public class VehicleType implements Serializable {
         this.id = id;
     }
 
-    public int getCost() {
+    public float getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(float cost) {
         this.cost = cost;
     }
 
-    public int getMin_balance() {
+    public float getMin_balance() {
         return min_balance;
     }
 
-    public void setMin_balance(int min_balance) {
+    public void setMin_balance(float min_balance) {
         this.min_balance = min_balance;
     }
 
