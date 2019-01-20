@@ -10,9 +10,9 @@ public class Rental implements Serializable {
     @NotNull
     int vehicleId = -1;
     @NotNull
-    String stationFrom = "";
+    int stationFrom = 0;
     @NotNull
-    String stationTo = "";
+    int stationTo = 0;
     @NotNull
     String dateFrom = "";
     @NotNull
@@ -21,6 +21,16 @@ public class Rental implements Serializable {
     float paymentValue = -1;
     @NotNull
     String paymentStatus = "";
+/*    @NotNull
+    int userId = 0;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }*/
 
     public int getRentalId() {
         return rentalId;
@@ -45,19 +55,19 @@ public class Rental implements Serializable {
         return "" + vehicleId;
     }
 
-    public String getStationFrom() {
+    public int getStationFrom() {
         return stationFrom;
     }
 
-    public void setStationFrom(String stationFrom) {
+    public void setStationFrom(int stationFrom) {
         this.stationFrom = stationFrom;
     }
 
-    public String getStationTo() {
+    public int getStationTo() {
         return stationTo;
     }
 
-    public void setStationTo(String stationTo) {
+    public void setStationTo(int stationTo) {
         this.stationTo = stationTo;
     }
 

@@ -90,6 +90,24 @@ public class JDBCConnection {
         return hashpassword;
     }
 
+    public boolean isActive(String username) {
+        boolean active = false;
+        getConnection();
+        try {
+            PreparedStatement stmt = conn.prepareCall("SELECT is_active FROM users WHERE username = ?");
+            stmt.setString(1, username);
+            ResultSet rset = stmt.executeQuery();
+            rset.next();
+            active = rset.getBoolean(1);
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection isActive(): " + e.getMessage());
+        }
+        closeConnection();
+        return active;
+    }
+
     public boolean setNewPassword(String username, String newHashPass) {
         boolean ifSuccess = false;
         getConnection();
@@ -489,7 +507,42 @@ public class JDBCConnection {
     public List<Rental> getRentalsForUserQuery(String username) {
         List<Rental> rentals = new ArrayList<>();
         getConnection();
-        //TODO
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELECT vehiclerentals.* " +
+                    "FROM vehiclerentals " +
+                    "INNER JOIN users ON vehiclerentals.user_id = users.user_id " +
+                    "WHERE users.username = ?");
+            stmt.setString(1, username);
+            ResultSet rset = stmt.executeQuery();
+            while (rset.next()) {
+                Rental rental = new Rental();
+                rental.setRentalId(rset.getInt(1));
+                rental.setStationFrom(rset.getInt(2));
+                rental.setStationTo(rset.getByte(3));
+                rental.setDateFrom(rset.getString(4));
+                rental.setDateTo(rset.getString(5));
+                //rental.setUserId(rset.getInt(6));
+                rental.setVehicleId(rset.getInt(7));
+                int rentalPayment = rset.getInt(8);
+
+                if (rentalPayment != 0){
+                    PreparedStatement stmtPay = conn.prepareStatement("SELECT final_value, status " +
+                            "FROM rentalpayments " +
+                            "where payment_id = ?");
+                    stmtPay.setInt(1, rentalPayment);
+                    ResultSet rsetPay = stmtPay.executeQuery();
+                    rental.setPaymentValue(rsetPay.getFloat(1));
+                    rental.setPaymentStatus(rsetPay.getString(2));
+                    rsetPay.close();
+                    stmtPay.close();
+                }
+                rentals.add(rental);
+            }
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRentalsForUserQuery():" + e.getMessage());
+        }
         closeConnection();
         return rentals;
     }
