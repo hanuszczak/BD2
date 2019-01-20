@@ -130,19 +130,23 @@ public class JDBCConnection {
     public boolean rentQuery(String username, Station station, VehicleType vehicleType, Vehicle vehicle){
         getConnection();
         try{
-            PreparedStatement stmt = conn.prepareStatement("DECLARE " +
-                    "   userid NUMBER; " +
-                    "begin " +
-                    "    SELECT user_id into userid from users where username = ?; " +
-                    "    rent_bike(?,userid,?); " +
-                    "end");
+            PreparedStatement stmt = conn.prepareStatement("SELECT user_id from users where username = ?");
             stmt.setString(1, username);
-            stmt.setInt(2, station.getId());
-            stmt.setInt(3, vehicleType.getId());
             ResultSet rset = stmt.executeQuery();
-
+            rset.next();
+            int user_id = rset.getInt(1);
             rset.close();
             stmt.close();
+
+            CallableStatement cs = null;
+            cs = conn.prepareCall("{call rent_vehicle(?,?,?,?)}");
+            cs.setInt(1, station.getId());
+            cs.setInt(2, user_id);
+            cs.setInt(3, vehicleType.getId());
+            cs.setInt(4, vehicle.getId());
+            ResultSet rset2 = cs.executeQuery();
+            rset2.close();
+            cs.close();
             return true;
         } catch (SQLException e) {
             System.out.println("Error JDBCConnection rentQuery():" + e.getMessage());
@@ -154,21 +158,25 @@ public class JDBCConnection {
     public boolean returnQuery(String username, Vehicle vehicle, Station station){
         getConnection();
         try{
-            PreparedStatement stmt = conn.prepareStatement("DECLARE " +
-                    "   rentid NUMBER; " +
-                    "begin " +
-                    "    SELECT rental_id into rentid from vehiclerentals " +
-                    "    INNER JOIN users ON vehiclerentals.user_id = users.user_id " +
-                    "    where users.username = ? AND vehiclerentals.vehicle_id = ?; " +
-                    "    return_bike(rentid,?); " +
-                    "end;");
+            PreparedStatement stmt = conn.prepareStatement("SELECT rental_id from vehiclerentals " +
+                    "INNER JOIN users ON vehiclerentals.user_id = users.user_id " +
+                    "where users.username = ? AND vehiclerentals.vehicle_id = ?");
             stmt.setString(1, username);
             stmt.setInt(2, vehicle.getId());
-            stmt.setInt(3, station.getId());
             ResultSet rset = stmt.executeQuery();
-
+            rset.next();
+            int rent_id = rset.getInt(1);
             rset.close();
             stmt.close();
+
+            CallableStatement cs = null;
+            cs = conn.prepareCall("{call return_bike(?,?)}");
+            cs.setInt(1, rent_id);
+            cs.setInt(2, station.getId());
+            ResultSet rset2 = cs.executeQuery();
+            rset2.close();
+            cs.close();
+
             return true;
         } catch (SQLException e) {
             System.out.println("Error JDBCConnection returnQuery():" + e.getMessage());
@@ -349,19 +357,13 @@ public class JDBCConnection {
     public boolean topUpQuery(int accountId, float topUp){
         getConnection();
         try{
-            //PreparedStatement stmt = conn.prepareStatement("begin " +
-            //        "    charge_or_load_user_account(?,?);" +
-            //        "end");
             CallableStatement cs = null;
             cs = conn.prepareCall("{call charge_or_load_user_account(?, ?)}");
-            //stmt.setInt(1, accountId);
             cs.setInt(1, accountId);
-            //stmt.setFloat(2, topUp);
             cs.setFloat(2, topUp);
-            //ResultSet rset = stmt.executeQuery();
             ResultSet rset = cs.executeQuery();
-            //rset.close();
-            //stmt.close();
+            rset.close();
+            cs.close();
             return true;
         } catch (SQLException e) {
             System.out.println("Error JDBCConnection topUpQuery{():" + e.getMessage());
