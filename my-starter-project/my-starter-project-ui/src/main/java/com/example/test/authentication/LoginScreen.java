@@ -175,16 +175,73 @@ public class LoginScreen extends FlexLayout {
 
     private void signUp() {
         signUp.setEnabled(false);
+
         try {
-            if (accessControl.signUp(usernameSignUp.getValue(), passwordSignUp.getValue(), name.getValue(),
-                    surname.getValue(), email.getValue(), phone.getValue())){
+            boolean checkUsername = false;
+            boolean checkPassword = false;
+            boolean checkMail = false;
+            boolean checkMailType = false;
+            boolean phoneType = false;
+
+            // check if we have the same username in our base
+            if (accessControl.signUpCheckUsername(usernameSignUp.getValue())){
+                checkUsername = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "User with that username is already in our base."));
+                usernameSignUp.focus();
+            }
+
+            if (accessControl.signUpCheckMail(email.getValue())){
+                checkMail = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "User with that email is already in our base."));
+                usernameSignUp.focus();
+            }
+
+            // check if you choose the same password twice
+            if (passwordSignUp.getValue().equals(confirmPassword.getValue())){
+                checkPassword = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "Confirmed password is not the same as Password."));
+                usernameSignUp.focus();
+            }
+
+            if (email.getValue().indexOf("@") != -1){
+                checkMailType = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "Please check if your email is of a proper type."));
+                usernameSignUp.focus();
+            }
+
+            if (String.valueOf(phone.getValue()).length() == 6){
+                phoneType = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "Please check if your phone number is of the proper type."));
+                usernameSignUp.focus();
+            }
+
+
+            if (checkPassword & checkUsername & checkMail & checkMailType & phoneType) {
+                accessControl.signUp(usernameSignUp.getValue(), passwordSignUp.getValue(), name.getValue(),
+                        surname.getValue(), email.getValue(), phone.getValue());
                 getUI().get().navigate("");
+                signUp.setEnabled(true);
             } else {
                 showNotification(new Notification("Sign Up failed. " +
                         "Please check your data and try again."));
                 usernameSignUp.focus();
+                signUp.setEnabled(true);
             }
-        } finally {
+
+        } catch (Exception e) {
+            showNotification(new Notification("Sign Up failed. " +
+                    "Please check your data and try again."));
+            usernameSignUp.focus();
             signUp.setEnabled(true);
         }
     }

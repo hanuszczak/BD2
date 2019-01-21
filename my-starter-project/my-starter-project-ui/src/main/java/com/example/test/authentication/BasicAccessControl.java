@@ -52,6 +52,30 @@ public class BasicAccessControl implements AccessControl {
     }
 
     @Override
+    public boolean signUpCheckUsername(String username){
+        boolean ifSigningUpSucceed = false;
+        try {
+            ifSigningUpSucceed = jdbcConnection.checkUsername(username);
+        }
+        catch (Exception e) {
+            System.out.println("Error BasicAccessControl (signUpCheckUsername): " + e.getMessage());
+        }
+        return ifSigningUpSucceed;
+    }
+
+    @Override
+    public boolean signUpCheckMail(String email){
+        boolean ifSigningUpSucceed = false;
+        try {
+            ifSigningUpSucceed = jdbcConnection.checkMail(email);
+        }
+        catch (Exception e) {
+            System.out.println("Error BasicAccessControl (signUpCheckMail): " + e.getMessage());
+        }
+        return ifSigningUpSucceed;
+    }
+
+    @Override
     public boolean isUserSignedIn() {
         return !CurrentUser.get().isEmpty();
     }

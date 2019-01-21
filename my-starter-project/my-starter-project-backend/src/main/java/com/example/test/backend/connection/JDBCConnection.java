@@ -17,6 +17,7 @@ import java.nio.file.Paths;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+
 public class JDBCConnection {
 
     private Connection conn;
@@ -27,6 +28,7 @@ public class JDBCConnection {
     public JDBCConnection() {
            this.conn = null;
     }
+
 
     private void getConnection() {
         try
@@ -119,17 +121,57 @@ public class JDBCConnection {
             stmt.close();
             ifSuccess = true;
         }
-        catch (SQLException e) {
+        catch (Exception e) {
             System.out.println("Error JDBCConnection getConnection: " + e.getMessage());
         }
         closeConnection();
         return ifSuccess;
     }
 
+    public boolean checkUsername(String username) {
+        getConnection();
+        try {
+            PreparedStatement stmt_user = conn.prepareCall("SELECT count(*) as mycount FROM users WHERE username = ?");
+            stmt_user.setString(1, username);
+            ResultSet rset_user = stmt_user.executeQuery();
+            rset_user.next();
+            int is_user = rset_user.getInt("mycount");
+            if (is_user != 0) {
+                return false;
+            }
+        }
+        catch (SQLException e){
+            System.out.println("Error JDBCConnection checkUsername: " + e.getMessage() + username);
+            return false;
+        }
+        return true;
+    }
+
+    public boolean checkMail(String email) {
+        getConnection();
+        try {
+            PreparedStatement stmt_user = conn.prepareCall("SELECT count(*) as mycount FROM users WHERE email = ?");
+            stmt_user.setString(1, email);
+            ResultSet rset_user = stmt_user.executeQuery();
+            rset_user.next();
+            int is_mail = rset_user.getInt("mycount");
+            if (is_mail != 0) {
+                return false;
+            }
+        }
+        catch (SQLException e){
+            System.out.println("Error JDBCConnection checkMail: " + e.getMessage());
+            return false;
+        }
+        return true;
+    }
+
     public boolean newUserQuery(String username, String password, String name, String surname, String email, String phone)
                 throws SQLException {
         String hashpassword = hashPass(username,password);
         getConnection();
+
+
         PreparedStatement stmt = conn.prepareStatement("INSERT INTO USERS " +
                 "(USER_ID, NAME, SURNAME, EMAIL, PHONE, IS_ACTIVE, USERNAME, PASSWORD, USER_TYPE_ID)" +
                 " VALUES (SEQ_USERS_USER_ID.NEXTVAL, ?, ?, ?, ?, 1, ?, ?, 2)");
