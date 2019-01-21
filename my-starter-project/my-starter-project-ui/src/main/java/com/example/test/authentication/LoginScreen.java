@@ -1,11 +1,11 @@
 package com.example.test.authentication;
 
+import com.example.test.backend.rentalAgencyData.UserType;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Span;
@@ -18,6 +18,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+
 /**
  * UI content when the user is not logged in yet.
  */
@@ -29,12 +30,27 @@ public class LoginScreen extends FlexLayout {
     private TextField username;
     private PasswordField password;
     private Button login;
+    private Button signUpButton;
 
+    private TextField usernameSignUp;
+    private PasswordField passwordSignUp;
+    private PasswordField confirmPassword;
+    private TextField name;
+    private TextField surname;
+    private TextField email;
+    private TextField phone;
+    private Button signUp;
 
+    private FlexLayout centeringLayout;
+    private FormLayout signUpForm;
+    private FormLayout loginForm;
     private AccessControl accessControl;
 
     public LoginScreen() {
         accessControl = AccessControlFactory.getInstance().createAccessControl();
+        centeringLayout = new FlexLayout();
+        buildLoginForm();
+        buildSignUpForm();
         buildUI();
         username.focus();
     }
@@ -43,11 +59,8 @@ public class LoginScreen extends FlexLayout {
         setSizeFull();
         setClassName("login-screen");
 
-        // login form, centered in the available part of the screen
-        Component loginForm = buildLoginForm();
-
         // layout to center login form when there is sufficient screen space
-        FlexLayout centeringLayout = new FlexLayout();
+
         centeringLayout.setSizeFull();
         centeringLayout.setJustifyContentMode(JustifyContentMode.CENTER);
         centeringLayout.setAlignItems(Alignment.CENTER);
@@ -60,8 +73,8 @@ public class LoginScreen extends FlexLayout {
         add(centeringLayout);
     }
 
-    private Component buildLoginForm() {
-        FormLayout loginForm = new FormLayout();
+    private void buildLoginForm() {
+        loginForm = new FormLayout();
 
         loginForm.setWidth("310px");
 
@@ -80,12 +93,50 @@ public class LoginScreen extends FlexLayout {
         loginForm.getElement().addEventListener("keypress", event -> login()).setFilter("event.key == 'Enter'");
         login.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
 
-//        buttons.add(signUpButton = new Button("Sign Up!"));
-//        signUpButton.addClickListener(event -> getUI().get().navigate("SignUp"));
-//        signUpButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
+        buttons.add(signUpButton = new Button("Sign Up!"));
+        signUpButton.addClickListener(event -> {
+            centeringLayout.remove(loginForm);
+            centeringLayout.add(signUpForm);
+        });
+        signUpButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
 
-        return loginForm;
     }
+    private void buildSignUpForm() {
+        signUpForm = new FormLayout();
+
+        signUpForm.setWidth("310px");
+
+        signUpForm.addFormItem(usernameSignUp = new TextField(), "Username");
+        usernameSignUp.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(passwordSignUp = new PasswordField(), "Password");
+        passwordSignUp.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(confirmPassword = new PasswordField(), "Confirm Password");
+        confirmPassword.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(name = new TextField(), "First Name");
+        name.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(surname = new TextField(), "Surname");
+        surname.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(email = new TextField(), "E-mail");
+        email.setWidth("15em");
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.addFormItem(phone = new TextField(), "Phone number");
+
+        HorizontalLayout buttons = new HorizontalLayout();
+        signUpForm.add(new Html("<br/>"));
+        signUpForm.add(buttons);
+
+        buttons.add(signUp = new Button("Sign up"));
+        signUp.addClickListener(event -> signUp());
+        signUpForm.getElement().addEventListener("keypress", event -> signUp()).setFilter("event.key == 'Enter'");
+        signUp.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
+
+    }
+
 
 
     private Component buildLoginInformation() {
@@ -105,7 +156,13 @@ public class LoginScreen extends FlexLayout {
         login.setEnabled(false);
         try {
             if (accessControl.signIn(username.getValue(), password.getValue())) {
-                getUI().get().navigate("");
+                String role = CurrentUser.getRole();
+                if(role.equals(UserType.ADMIN.toString())||role.equals(UserType.WORKER.toString())){
+                    getUI().get().navigate("Users");
+                }
+                else {
+                    getUI().get().navigate("");
+                }
             } else {
                 showNotification(new Notification("Login failed. " +
                         "Please check your username and password and try again."));
@@ -113,6 +170,79 @@ public class LoginScreen extends FlexLayout {
             }
         } finally {
             login.setEnabled(true);
+        }
+    }
+
+    private void signUp() {
+        signUp.setEnabled(false);
+
+        try {
+            boolean checkUsername = false;
+            boolean checkPassword = false;
+            boolean checkMail = false;
+            boolean checkMailType = false;
+            boolean phoneType = false;
+
+            // check if we have the same username in our base
+            if (accessControl.signUpCheckUsername(usernameSignUp.getValue())){
+                checkUsername = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "User with that username is already in our base."));
+                usernameSignUp.focus();
+            }
+
+            if (accessControl.signUpCheckMail(email.getValue())){
+                checkMail = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "User with that email is already in our base."));
+                usernameSignUp.focus();
+            }
+
+            // check if you choose the same password twice
+            if (passwordSignUp.getValue().equals(confirmPassword.getValue())){
+                checkPassword = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "Confirmed password is not the same as Password."));
+                usernameSignUp.focus();
+            }
+
+            if (email.getValue().indexOf("@") != -1){
+                checkMailType = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "Please check if your email is of a proper type."));
+                usernameSignUp.focus();
+            }
+
+            if (String.valueOf(phone.getValue()).length() == 9){
+                phoneType = true;
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "Please check if your phone number is of the proper type."));
+                usernameSignUp.focus();
+            }
+
+
+            if (checkPassword & checkUsername & checkMail & checkMailType & phoneType) {
+                accessControl.signUp(usernameSignUp.getValue(), passwordSignUp.getValue(), name.getValue(),
+                        surname.getValue(), email.getValue(), phone.getValue());
+                getUI().get().navigate("");
+                signUp.setEnabled(true);
+            } else {
+                showNotification(new Notification("Sign Up failed. " +
+                        "Please check your data and try again."));
+                usernameSignUp.focus();
+                signUp.setEnabled(true);
+            }
+
+        } catch (Exception e) {
+            showNotification(new Notification("Sign Up failed. " +
+                    "Please check your data and try again."));
+            usernameSignUp.focus();
+            signUp.setEnabled(true);
         }
     }
 

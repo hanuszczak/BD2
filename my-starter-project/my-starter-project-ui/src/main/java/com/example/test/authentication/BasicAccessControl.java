@@ -22,15 +22,19 @@ public class BasicAccessControl implements AccessControl {
     public boolean signIn(String username, String password) {
         if (username == null || username.isEmpty())
             return false;
-        CurrentUser.set(username);
-        String pass = new String();
+        String[] data = new String[2];  // data[0] - pass, data[1] - role
+        String haspassword = "";
+        boolean active = false;
         try {
-            pass = jdbcConnection.getPassQuery(username);
+            data = jdbcConnection.getPassAndRoleQuery(username);
+            haspassword = jdbcConnection.hashPass(username,password);
+            active = jdbcConnection.isActive(username);
         }
         catch (SQLException e) {
             System.out.println("Error BasicAccessControl (getPassQuery): " + e.getMessage());
         }
-        if(password.equals(pass)){
+        CurrentUser.set(username, data[1]);
+        if(haspassword.equals(data[0]) && active){
             return true;
         }
         return false;
@@ -45,6 +49,31 @@ public class BasicAccessControl implements AccessControl {
         catch (SQLException e) {
             System.out.println("Error BasicAccessControl (newUserQuery): " + e.getMessage());
         }
+        CurrentUser.set(username, "user");
+        return ifSigningUpSucceed;
+    }
+
+    @Override
+    public boolean signUpCheckUsername(String username){
+        boolean ifSigningUpSucceed = false;
+        try {
+            ifSigningUpSucceed = jdbcConnection.checkUsername(username);
+        }
+        catch (Exception e) {
+            System.out.println("Error BasicAccessControl (signUpCheckUsername): " + e.getMessage());
+        }
+        return ifSigningUpSucceed;
+    }
+
+    @Override
+    public boolean signUpCheckMail(String email){
+        boolean ifSigningUpSucceed = false;
+        try {
+            ifSigningUpSucceed = jdbcConnection.checkMail(email);
+        }
+        catch (Exception e) {
+            System.out.println("Error BasicAccessControl (signUpCheckMail): " + e.getMessage());
+        }
         return ifSigningUpSucceed;
     }
 
@@ -54,14 +83,15 @@ public class BasicAccessControl implements AccessControl {
     }
 
     @Override
-    public boolean isUserInRole(String role) {
-        if ("admin".equals(role)) {
-            // Only the "admin" user is in the "admin" role
-            return getPrincipalName().equals("admin");
-        }
+    public boolean isUserInRoleOfAdmin() {
+        if(!(CurrentUser.get() == null))
+            return CurrentUser.getRole().equals("admin");
+        else return false;
+    }
+    @Override
+    public boolean isUserInRoleOfWorker() {
+        return CurrentUser.getRole().equals("worker");
 
-        // All users are in all non-admin roles
-        return true;
     }
 
     @Override

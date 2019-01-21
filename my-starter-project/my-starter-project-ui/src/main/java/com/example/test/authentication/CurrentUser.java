@@ -18,6 +18,7 @@ public final class CurrentUser {
      */
     public static final String CURRENT_USER_SESSION_ATTRIBUTE_KEY = CurrentUser.class
             .getCanonicalName();
+    public static final String ROLE = "user";
 
     private CurrentUser() {
     }
@@ -39,6 +40,15 @@ public final class CurrentUser {
         }
     }
 
+    public static String getRole() {
+        String role = (String) getCurrentRequest().getWrappedSession().getAttribute(ROLE);
+        if (role == null) {
+            return "";
+        } else {
+            return role;
+        }
+    }
+
     /**
      * Sets the name of the current user and stores it in the current session.
      * Using a {@code null} username will remove the username from the session.
@@ -46,13 +56,15 @@ public final class CurrentUser {
      * @throws IllegalStateException
      *             if the current session cannot be accessed.
      */
-    public static void set(String currentUser) {
+    public static void set(String currentUser, String role) {
         if (currentUser == null) {
             getCurrentRequest().getWrappedSession().removeAttribute(
                     CURRENT_USER_SESSION_ATTRIBUTE_KEY);
         } else {
             getCurrentRequest().getWrappedSession().setAttribute(
                     CURRENT_USER_SESSION_ATTRIBUTE_KEY, currentUser);
+            getCurrentRequest().getWrappedSession().setAttribute(
+                    ROLE, role);
         }
     }
 

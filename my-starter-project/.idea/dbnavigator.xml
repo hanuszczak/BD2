@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="0714ffa0-6578-4446-9b56-4360a9295d31">
-        <schema name="SH1BLUE103" object-types="table, view, materialized view, synonym, sequence, procedure, function, package, type, database trigger, dimension, cluster, dblink" />
+        <schema name="SH1BLUE103" object-types="table, view, materialized view, synonym, sequence, procedure, function, package, type, database trigger, dimension, cluster, dblink, constraint, index, column, dataset trigger, nested table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -103,7 +103,7 @@
           <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="false" />
-          <connect-automatically value="true" />
+          <connect-automatically value="false" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="true" />
           <environment-type value="default" />
@@ -141,7 +141,11 @@
             <object-type name="CLUSTER" enabled="true" />
             <object-type name="DBLINK" enabled="true" />
           </object-type-filter>
-          <object-name-filters />
+          <object-name-filters>
+            <filter join-type="AND" object-type="schema">
+              <simple-condition operator="EQUAL" text="SH1BLUE103" />
+            </filter>
+          </object-name-filters>
         </object-filters>
       </connection>
     </connections>

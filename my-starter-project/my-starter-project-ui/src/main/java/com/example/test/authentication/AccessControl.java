@@ -15,9 +15,15 @@ public interface AccessControl extends Serializable {
 
     public boolean signUp(String username, String password, String name, String surname, String email, String phone);
 
+    public boolean signUpCheckUsername(String username);
+
+    public boolean signUpCheckMail(String email);
+
     public boolean isUserSignedIn();
 
-    public boolean isUserInRole(String role);
+    public boolean isUserInRoleOfAdmin();
+
+    public boolean isUserInRoleOfWorker();
 
     public String getPrincipalName();
 }
