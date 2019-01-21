@@ -125,7 +125,7 @@ public class RaportView extends FlexLayout {
         formLayout.addFormItem(stationBox, "Choose station");
         stationBox.setWidth("20em");
         formLayout.add(new Html("<br/>"));
-        formLayout.addFormItem(daysField, "Create raport for X days back");
+        formLayout.addFormItem(daysField, "Create raport for X days");
         daysField.setWidth("20em");
         formLayout.add(new Html("<br/>"));
 
@@ -146,7 +146,6 @@ public class RaportView extends FlexLayout {
         });
         formLayout.getElement().addEventListener("keypress", event -> generateRaport()).setFilter("event.key == 'Enter'");
         raportButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
-
     }
 
 

@@ -414,11 +414,15 @@ public class JDBCConnection {
             ResultSet rs1 = st.executeQuery();
             rs1.next();
             Timestamp time = rs1.getTimestamp("TheTime");
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM vehiclerentals WHERE date_from > ?");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM vehiclerentals v INNER JOIN stations s on v.station_from = s.station_id INNER JOIN regions r on r.region_id = s.region_id WHERE v.date_from > ?");
             stmt.setTimestamp(1, time);
+
+            System.out.println(station.getId());
+            System.out.println(time);
+
             ResultSet rs = stmt.executeQuery();
             System.out.print(rs);
-            String fileName = "src/main/resources/out.csv";
+            String fileName = "src/main/resources/out3.csv";
             Path myPath = Paths.get(fileName);
             try {CSVWriter writer = new CSVWriter(Files.newBufferedWriter(myPath,
                     StandardCharsets.UTF_8), CSVWriter.DEFAULT_SEPARATOR,
