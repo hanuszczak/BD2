@@ -1,7 +1,6 @@
 package com.example.test.backend;
 
-import com.example.test.backend.data.Category;
-import com.example.test.backend.data.Product;
+
 import com.example.test.backend.dataServiceRentalAgency.UserDataService;
 import com.example.test.backend.rentalAgencyData.User;
 

@@ -18,7 +18,7 @@ public class Rental implements Serializable {
     @NotNull
     String dateTo = "";
     @NotNull
-    float paymentValue = -1;
+    float paymentValue = 0;
     @NotNull
     String paymentStatus = "";
 /*    @NotNull

@@ -27,7 +27,7 @@ public class RentalControl {
     }
 
     public boolean rent(String username, Station station, VehicleType vehicleType, Vehicle vehicle) {
-        boolean ifRentSuccessful = false;
+        boolean ifRentSuccessful;
         //       try {
         ifRentSuccessful = jdbcConnection.rentQuery(username, station, vehicleType, vehicle);
 //        }
@@ -38,7 +38,7 @@ public class RentalControl {
     }
 
     public boolean returnVehicle(String username, Vehicle vehicle, Station station) {
-        boolean ifReturnSuccessful = false;
+        boolean ifReturnSuccessful;
 //        try {
         ifReturnSuccessful = jdbcConnection.returnQuery(username, vehicle, station);
 //        }

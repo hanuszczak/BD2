@@ -379,6 +379,26 @@ public class JDBCConnection {
         return vehicles;
     }
 
+    public int getNumberOfRentedVehiclesQuery(String username) {
+        int number = 0;
+        getConnection();
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELECT vehicles.* FROM vehiclerentals " +
+                    "INNER JOIN users ON vehiclerentals.user_id = users.user_id " +
+                    "INNER JOIN vehicles ON vehiclerentals.vehicle_id = vehicles.vehicle_id " +
+                    "WHERE users.username = ? and vehiclerentals.DATE_TO is NULL");
+            stmt.setString(1, username);
+            ResultSet rset = stmt.executeQuery();
+            number = getRows(rset);
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Error JDBCConnection getRentedVehiclesQuery():" + e.getMessage());
+        }
+        closeConnection();
+        return number;
+    }
+
 
     public boolean updateUserQuery(User user){
         boolean ifSuccessful = false;
@@ -414,8 +434,10 @@ public class JDBCConnection {
             ResultSet rs1 = st.executeQuery();
             rs1.next();
             Timestamp time = rs1.getTimestamp("TheTime");
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM vehiclerentals WHERE date_from > ?");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM vehiclerentals WHERE (date_from > ? AND (station_from = ? OR station_to =?))");
             stmt.setTimestamp(1, time);
+            stmt.setInt(2, station.getId());
+            stmt.setInt(3, station.getId());
             ResultSet rs = stmt.executeQuery();
             System.out.print(rs);
             String fileName = "src/main/resources/out.csv";
@@ -578,9 +600,9 @@ public class JDBCConnection {
                 Rental rental = new Rental();
                 rental.setRentalId(rset.getInt(1));
                 rental.setStationFrom(rset.getInt(2));
-                rental.setStationTo(rset.getByte(3));
-                rental.setDateFrom(rset.getString(4));
-                rental.setDateTo(rset.getString(5));
+                rental.setStationTo(rset.getInt(3));
+                rental.setDateFrom(timestampToString(rset.getTimestamp(4)));
+                rental.setDateTo(timestampToString(rset.getTimestamp(5)));
                 //rental.setUserId(rset.getInt(6));
                 rental.setVehicleId(rset.getInt(7));
                 int rentalPayment = rset.getInt(8);
@@ -591,7 +613,8 @@ public class JDBCConnection {
                             "where payment_id = ?");
                     stmtPay.setInt(1, rentalPayment);
                     ResultSet rsetPay = stmtPay.executeQuery();
-                    rental.setPaymentValue(rsetPay.getFloat(1));
+                    rsetPay.next();
+                    rental.setPaymentValue(rsetPay.getInt(1));
                     rental.setPaymentStatus(rsetPay.getString(2));
                     rsetPay.close();
                     stmtPay.close();
@@ -605,6 +628,19 @@ public class JDBCConnection {
         }
         closeConnection();
         return rentals;
+    }
+
+    public int getRows(ResultSet res){
+        int totalRows = 0;
+        try {
+            res.last();
+            totalRows = res.getRow();
+            res.beforeFirst();
+        }
+        catch(Exception ex)  {
+            return 0;
+        }
+        return totalRows ;
     }
 
 
@@ -657,9 +693,12 @@ public class JDBCConnection {
         return i;
     }
 
-    private String timestampToInt(Timestamp ts) {
+    private String timestampToString(Timestamp ts) {
         Date date = new Date();
-        date.setTime(ts.getTime());
-        return new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss").format(date);
+        if(ts != null) {
+            date.setTime(ts.getTime());
+            return new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss").format(date);
+        }
+        else  return "";
     }
 }

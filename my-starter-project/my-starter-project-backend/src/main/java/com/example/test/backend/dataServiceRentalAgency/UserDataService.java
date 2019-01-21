@@ -1,15 +1,9 @@
 package com.example.test.backend.dataServiceRentalAgency;
 
-import com.example.test.backend.DataService;
 import com.example.test.backend.MyDataService;
 import com.example.test.backend.connection.JDBCConnection;
-import com.example.test.backend.data.Category;
-import com.example.test.backend.data.Product;
-import com.example.test.backend.mock.MockDataGenerator;
 import com.example.test.backend.rentalAgencyData.User;
 
-import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
