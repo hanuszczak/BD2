@@ -217,7 +217,7 @@ public class LoginScreen extends FlexLayout {
                 usernameSignUp.focus();
             }
 
-            if (String.valueOf(phone.getValue()).length() == 6){
+            if (String.valueOf(phone.getValue()).length() == 9){
                 phoneType = true;
             } else {
                 showNotification(new Notification("Sign Up failed. " +
