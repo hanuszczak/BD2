@@ -464,7 +464,25 @@ public class JDBCConnection {
             System.out.println("Error JDBCConnection deleteUserQuery(delete users):" + e.getMessage());
         }
         try {
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM VEHICLERENTALS WHERE USER_ID = ?");
+            stmt.setInt(1, user.getId());
+            stmt.executeUpdate();
+            stmt.close();
+        }
+        catch (SQLException e) {
+            System.out.println("Error JDBCConnection deleteUserQuery(delete users):" + e.getMessage());
+        }
+        try {
             PreparedStatement stmt = conn.prepareStatement("DELETE FROM USERS WHERE USER_ID = ?");
+            stmt.setInt(1, user.getId());
+            stmt.executeUpdate();
+            stmt.close();
+        }
+        catch (SQLException e) {
+            System.out.println("Error JDBCConnection deleteUserQuery(delete users):" + e.getMessage());
+        }
+        try {
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM ACCOUNTS WHERE ACCOUNT_ID = ?");
             stmt.setInt(1, user.getId());
             stmt.executeUpdate();
             stmt.close();
