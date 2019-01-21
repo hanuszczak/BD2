@@ -25,9 +25,9 @@ public class RentalDataService extends MyDataService2 {
     }
 
     public synchronized static RentalDataService getInstance() {
-        if (INSTANCE == null) {
+        //if (INSTANCE == null) {
             INSTANCE = new RentalDataService();
-        }
+        //}
         return INSTANCE;
     }
 

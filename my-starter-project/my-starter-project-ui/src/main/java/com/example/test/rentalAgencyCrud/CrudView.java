@@ -2,7 +2,6 @@ package com.example.test.rentalAgencyCrud;
 
 import com.example.test.MainLayout;
 import com.example.test.backend.rentalAgencyData.User;
-import com.example.test.crud.SampleCrudLogic;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -12,12 +11,7 @@ import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.OptionalParameter;
 import com.vaadin.flow.router.Route;
 
-/**
- * A view for performing create-read-update-delete operations on products.
- *
- * See also {@link SampleCrudLogic} for fetching the data, the actual CRUD
- * operations and controlling the view based on events from outside.
- */
+
 @Route(value = "Users", layout = MainLayout.class)
 //@RouteAlias(value = "", layout = MainLayout.class)
 public class CrudView extends HorizontalLayout

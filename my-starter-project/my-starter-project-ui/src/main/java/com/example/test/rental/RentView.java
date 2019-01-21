@@ -165,7 +165,7 @@ public class RentView extends FlexLayout {
         rentButton.setEnabled(false);
         try {
             if (rentalControl.rent(currentUser, stationBox.getValue(), vehicleTypeBox.getValue(), vehicleBox.getValue() )) {
-                getUI().get().navigate("");
+                getUI().get().navigate("History");
             } else {
                 showNotification(new Notification("Renting a vehicle failed. " +
                         "Please try again"));

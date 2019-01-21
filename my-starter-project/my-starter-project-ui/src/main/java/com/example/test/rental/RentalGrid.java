@@ -29,12 +29,12 @@ public class RentalGrid extends Grid<Rental> {
 
         addColumn(Rental::getStationFrom)
                 .setHeader("From")
-                .setFlexGrow(5)
+                .setFlexGrow(2)
                 .setSortable(true);
 
         addColumn(Rental::getStationTo)
                 .setHeader("To")
-                .setFlexGrow(5)
+                .setFlexGrow(2)
                 .setSortable(true);
 
         addColumn(Rental::getDateFrom)

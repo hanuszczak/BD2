@@ -1,6 +1,5 @@
 package com.example.test.rentalAgencyCrud;
 
-import com.example.test.backend.DataService;
 import com.example.test.backend.MyDataService;
 import com.example.test.backend.rentalAgencyData.User;
 import com.vaadin.flow.data.provider.ListDataProvider;

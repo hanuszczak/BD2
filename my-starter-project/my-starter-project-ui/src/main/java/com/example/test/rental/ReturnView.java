@@ -150,7 +150,7 @@ public class ReturnView extends FlexLayout {
         returnButton.setEnabled(false);
         try {
             if (rentalControl.returnVehicle(currentUser, vehicleBox.getValue(), stationBox.getValue())) {
-                getUI().get().navigate("Return");
+                getUI().get().navigate("History");
                 buildUI();
             } else {
                 showNotification(new Notification("Returning a vehicle failed. " +

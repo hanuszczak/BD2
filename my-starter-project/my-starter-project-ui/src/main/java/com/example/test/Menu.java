@@ -94,4 +94,8 @@ public class Menu extends FlexLayout {
         tab.add(routerLink);
         tabs.add(tab);
     }
+
+    public void addTab(Tab tab){
+        tabs.add(tab);
+    }
 }

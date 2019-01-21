@@ -1,7 +1,6 @@
 package com.example.test.rentalAgencyCrud;
 
-import com.example.test.backend.data.Category;
-import com.example.test.backend.data.Product;
+
 import com.example.test.backend.rentalAgencyData.User;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.data.renderer.TemplateRenderer;
